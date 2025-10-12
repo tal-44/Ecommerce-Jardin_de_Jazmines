@@ -6,6 +6,8 @@
   --gris: #6c757d;
   --blanco: #ffffff;
   --gris-claro: #e9ecef;
+  --text-gray: #6c757d;
+  --border-color: #e9ecef;
   --sombra: 0 2px 4px rgba(0,0,0,0.1);
   --transicion: all 0.3s ease;
 }
