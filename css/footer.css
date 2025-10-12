@@ -12,6 +12,7 @@
   --transicion: all 0.3s ease;
   /* footer-specific */
   --footer-bg: var(--blanco);
+  --negro: #000000;
 }
 
 * {
@@ -29,7 +30,7 @@ body {
 }
 
 .footer-container {
-  background: var(--footer-bg);
+  background: var(--negro);
   color: var(--gris);
   padding: 3rem 2rem;
   display: flex;
