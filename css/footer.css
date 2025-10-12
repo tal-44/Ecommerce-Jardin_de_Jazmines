@@ -1,0 +1,19 @@
+/* CSS Footer - Básico */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  background: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}

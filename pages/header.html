@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>Header - Jardín de Jazmines</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <header class="header-container">
+
+        <div class="promo-bar">
+            <div class="promo-text">
+                MEGA Oferta Gigante Especial!! Compra 2 ramos y llevate uno!!
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="header-left">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Logo Jardín de Jazmines" class="logo-icon">
+                </a>
+            </div>
+            
+            <nav class="header-center">
+                <a href="../pages/temp.html" class="nav-button">  <!-- redirigir a catalogo.html cuando exista-->
+                    <i class="fas fa-book"></i> Catálogo
+                </a>
+                <a href="#" class="nav-button"> <!-- redirigir correctamente -->
+                    <i class="fas fa-flask"></i> Test
+                </a>
+                <a href="#" class="nav-button">  <!-- redirigir correctamente -->
+                    <i class="fas fa-tools"></i> Catálogo herramientas
+                </a>
+                <a href="#" class="nav-button">  <!-- redirigir correctamente -->
+                    <i class="fas fa-seedling"></i> Planta de temporada
+                </a>
+            </nav>
+            
+            <div class="header-right">
+                <button class="icon-button" title="Carrito de compras" onclick="window.location.href='#'" aria-label="Ver carrito de compras">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                
+                <div class="user-menu">
+                    <button class="icon-button" title="Perfil de usuario" id="btnUserMenu" aria-expanded="false" aria-haspopup="true" aria-label="Menú de usuario">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown" role="region" aria-labelledby="btnUserMenu">
+                        <a href="#" class="dropdown-item">  <!-- redirigir correctamente -->
+                            <i class="fas fa-user-circle"></i> Mi Perfil
+                        </a>
+                        <a href="#" class="dropdown-item">  <!-- redirigir correctamente -->
+                            <i class="fas fa-box"></i> Mis Pedidos
+                        </a>
+                        <a href="#" class="dropdown-item">  <!-- redirigir correctamente -->
+                            <i class="fas fa-cog"></i> Configuración
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">  <!-- redirigir correctamente -->
+                            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="../js/header.js"></script>
 </body>
 </html>

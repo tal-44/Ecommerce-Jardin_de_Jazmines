@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --verde: #4a7c59;
+  --verde-claro: #a4c3b2;
+  --gris: #6c757d;
+  --blanco: #ffffff;
+  --gris-claro: #e9ecef;
+  --sombra: 0 2px 4px rgba(0,0,0,0.1);
+  --transicion: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* Animación al cargar la página  */
+@keyframes aparecer {
+  0% {   /* empezar en */
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% { /* hasta */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.promo-bar {
+  background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+  color: var(--blanco);
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  animation: moverTexto 15s linear infinite;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Animación de la barra superior */
+@keyframes moverTexto {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.main-header {
+  background: var(--blanco);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-button {
+  padding: 12px 20px;
+  background: var(--verde-claro);
+  color: var(--verde);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: var(--sombra);
+}
+
+.nav-button:hover {
+  background: var(--verde);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+  color: var(--blanco);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--gris);
+  cursor: pointer;
+  transition: var(--transicion);
+  padding: 8px;
+  border-radius: 50%;
+  position: relative;
+  font-family: inherit;
+}
+
+.icon-button:hover {
+  color: var(--verde);
+  background: var(--verde-claro);
+  transform: scale(1.1);
+}
+
+.nav-button:focus,
+.icon-button:focus {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--blanco);
+  min-width: 200px;
+  box-shadow: var(--sombra);
+  border-radius: 8px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transicion);
+  z-index: 1000;
+}
+
+.user-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--gris);
+  text-decoration: none;
+  transition: var(--transicion);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dropdown-item:hover {
+  background: var(--verde-claro);
+  color: var(--verde);
+}
+
+.dropdown-item i {
+  margin-right: 12px;
+  width: 16px;
+  text-align: center;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--gris-claro);
+  margin: 8px 0;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+  animation: aparecer 0.6s ease-out;
+  will-change: transform;
+}
+
+.promo-text {
+  will-change: transform;
+}
