@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* colores temporales, cambiar cuando se decida una paleta */
 :root {
   --verde: #4a7c59;
   --verde-claro: #a4c3b2;
   --gris: #6c757d;
-  --blanco: #ffffff;
   --gris-claro: #e9ecef;
-  --text-gray: #6c757d;
-  --border-color: #e9ecef;
+  --blanco: #ffffff;
   --sombra: 0 2px 4px rgba(0,0,0,0.1);
   --transicion: all 0.3s ease;
-  /* footer-specific */
   --footer-bg: var(--blanco);
   --negro: #000000;
 }
@@ -78,9 +76,8 @@ body {
   margin-bottom: 1rem;
   line-height: 1.2;
 }
-
 .register-description {
-  color: var(--text-gray);
+  color: var(--gris);
   font-size: 1rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -132,7 +129,7 @@ body {
 .search-input {
   flex: 1;
   padding: 12px 16px;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--gris);
   border-right: none;
   border-radius: 25px 0 0 25px;
   background: transparent;
@@ -144,7 +141,7 @@ body {
 }
 
 .search-input::placeholder {
-  color: var(--text-gray);
+  color: var(--gris-texto);
 }
 
 .search-input:focus {
