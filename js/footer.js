@@ -2,11 +2,15 @@ function temp() {
     alert("Funcionalidad aun no implementada.");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function initFooter() {
+    // Evitar inicialización duplicada
+    const footerRoot = document.querySelector('.footer-container');
+    if (!footerRoot) return;
+    if (footerRoot.dataset.jsInitialized === 'true') return;
+    footerRoot.dataset.jsInitialized = 'true';
 
-    console.log("Footer de Jardín de Jazmines cargado");
+    console.log("js Footer cargado");
 
-    // Botón de registro
     const botonRegistro = document.getElementById("registerBtn");
     if (botonRegistro) {
         botonRegistro.addEventListener("click", function(e) {
@@ -14,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Búsqueda
     const botonBuscar = document.getElementById("searchBtn");
     const campoBusqueda = document.getElementById("searchInput");
 
     function buscar() {
+        if (!campoBusqueda) return;
         const termino = campoBusqueda.value.trim();
 
         if (termino === "") {
@@ -37,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Buscar con Enter
     if (campoBusqueda) {
         campoBusqueda.addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
@@ -49,14 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const enlacesFooter = document.querySelectorAll(".footer-link");
     enlacesFooter.forEach(function(enlace) {
         const href = enlace.getAttribute("href");
-        
         if (href && href.includes("temp.html")) {
             enlace.addEventListener("click", function(e) {
                 temp();
             });
         }
     });
+}
 
-});
-
-console.log("Footer JavaScript cargado - Versión simple");
+// Inicializar inmediatamente si el DOM ya está listo, o esperar al evento si no
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFooter);
+} else {
+    setTimeout(initFooter, 0);
+}
