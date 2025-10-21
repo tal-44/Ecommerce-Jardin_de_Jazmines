@@ -1,7 +1,17 @@
+/* ========================================
+   INDEX.CSS - VERSIÓN CORREGIDA Y LIMPIA
+   Solo se cambió la ruta de la imagen
+   ======================================== */
+
+/* ========================================
+   SECCIÓN BUSCADOR
+   ======================================== */
+
 .seccion-buscador {
-    min-height: 40vh;  /*alto mínimo*/    
+    min-height: 40vh;
     width: 100%;
-    background-image: url('../images/fondoBuscador.jpg'); 
+    /* ⬇️ CORREGIDO: Cambiado de '../images/' a '../img/' */
+    background-image: url('../img/fondoBuscador.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,9 +25,9 @@
     width: 100%;
     padding: 1.5rem 2rem;
     border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);   /*desplazamiento vertical de una sombra*/
-    max-width: 45vw;   
-    min-width: 300px;  /*Límite mínimo en móviles */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    max-width: 45vw;
+    min-width: 300px;
     box-sizing: border-box;
 }
 
@@ -26,10 +36,10 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #2b3b34; /* fondo oscuro interno */
+    background-color: #2b3b34;
     border-radius: 8px;
     border: 2px solid rgba(0,0,0,0.4);
-    width: fit-content; /* se adapta al input */
+    width: fit-content;
     margin: 0 auto;
 }
 
@@ -42,6 +52,7 @@
     color: white;
     flex: 1;
     min-width: 0;
+    padding: 0.75rem 1rem;
 }
 
 /* placeholder más tenue */
@@ -56,13 +67,14 @@
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
+    padding: 0.5rem 1rem;
 }
 
 /* al pasar el ratón */
 .search-wrapper .search-btn:hover {
-    background-color: rgba(255,255,255,0.04);
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
 }
-
 
 .formulario-busqueda {
     display: flex;
@@ -99,23 +111,135 @@
     .formulario-busqueda {
         flex-direction: row;
     }
-
+    
     .formulario-busqueda input[type="text"] {
         flex: 1;
     }
-
+    
     .formulario-busqueda button {
         width: auto;
     }
 }
 
+/* ========================================
+   SECCIÓN TARJETAS TEMPORADAS
+   ======================================== */
 
-/* Estilos generales de la sección Test De Plantas*/
+.seccion-temporadas {
+    background-color: #f8f9fa;
+    padding: 4rem 2rem;
+    min-height: 50vh;
+}
+
+.container-temporadas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-temporadas {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2f6b44;
+    margin-bottom: 3rem;
+}
+
+.grid-temporadas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-temporada {
+    position: relative;
+    display: block;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tarjeta-temporada:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-temporada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-temporada:hover img {
+    transform: scale(1.1);
+}
+
+.overlay-temporada {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 2rem 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.tarjeta-temporada:hover .overlay-temporada {
+    background: linear-gradient(to top, rgba(47, 107, 68, 0.9), transparent);
+}
+
+.overlay-temporada h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overlay-temporada p {
+    font-size: 0.95rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-temporadas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .tarjeta-temporada {
+        height: 200px;
+    }
+    
+    .titulo-temporadas {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-temporadas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   SECCIÓN TEST DE PLANTAS
+   ======================================== */
+
 .seccion-personalizada {
-    background-color: #121212; /* Fondo negro */
+    background-color: #121212;
     color: white;
     min-height: 40vh;
-     width: 100%;    /*ancho*/
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,62 +255,86 @@
     min-height: 300px;
     background: transparent;
     box-shadow: none;
-    
 }
 
-/* Columna izquierda: barra verde (1/3 del ancho) */
+/* Columna izquierda: barra verde */
 .barra-verde {
-    background-color: #2f6b44; /* Verde personalizado */
+    background-color: #2f6b44;
     width: 22%;
-    margin-top: -30px;  /*para que se salga por arriba*/
-    margin-bottom: -30px; /*para que se salga por abajo*/
-    border-radius: 0 0 0 0;   /* deja cuadrada o con poco radio */
-    border-radius: 3px 0 12px rgba(0,0,0,0.3);
+    margin-top: -30px;
+    margin-bottom: -30px;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
-/* contenido a la derecha con tipografía tipo serif grande */
+/* contenido a la derecha */
 .contenido {
-  width: 78%;
-  padding: 3.5rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
+    width: 78%;
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 
-/* usa una familia serif si la tienes, si no se verá similar */
 .contenido h1 {
-  font-family: "Georgia", "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 4rem;   /* más grande como en la imagen */
-  margin: 0;
-  line-height: 1.05;
-  letter-spacing: 2px;
-  color: #ffffff;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1.05;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
 
-/* texto pequeño en verde */
 .contenido p {
-  color: #33c07a;   /* verde brillante */
-  font-size: 0.9rem;
-  margin: 0;
+    color: #33c07a;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 /* botón blanco alargado estilo píldora */
 .boton-test {
-  background-color: #efefef;
-  color: #111;
-  border: 1px solid rgba(0,0,0,0.12);
-  padding: 0.6rem 6.5rem; /* hace el botón alargado */
-  font-size: 0.95rem;
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    background-color: #efefef;
+    color: #111;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 0.6rem 6.5rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    transition: background-color 0.3s ease;
 }
 
-/* hover sutil */
 .boton-test:hover {
-  background-color: #e2e2e2;
+    background-color: #e2e2e2;
+}
+
+/* Responsive para sección test */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .barra-verde {
+        width: 100%;
+        height: 30px;
+        margin: 0;
+    }
+    
+    .contenido {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+    
+    .contenido h1 {
+        font-size: 2.5rem;
+    }
+    
+    .boton-test {
+        padding: 0.6rem 3rem;
+    }
 }
