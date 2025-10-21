@@ -16,7 +16,7 @@ Trabajo DAW. Asignatura: Desarrollo de interfaces web
 
 ## Tecnologías
 - Frontend: HTML / CSS / JS / PHP
-- Base de datos: MongoDB o PostgreSQL (elige la que prefieras)
+- Base de datos: MariaDB
 
 ---
 
