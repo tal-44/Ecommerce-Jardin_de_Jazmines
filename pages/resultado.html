@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" class="result">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resultado</title>
+  <link rel="stylesheet" href="../css/testPaginas.css">
+</head>
+<body>
+  <a class="back-button" href="test.html">← Volver</a>
+  <main class="container">
+    <img class="logo" src="img/logo.png" alt="Logotipo" onerror="this.style.display='none'">
+    <section class="result-card">
+      <h1 class="result-title">TUS PLANTAS</h1>
+      <h2 id="nombre-planta">Planta</h2>
+      <p id="desc-planta">…</p>
+      <div class="result-buttons">
+        <a id="btn-buy" class="button btn-buy" href="#" target="_blank" rel="noopener">¡Quiero esta planta!</a>
+        <a class="button btn-repeat" href="preguntas.html">Repetir Test</a>
+        <a class="button btn-home" href="../index.html" target="_blank" rel="noopener">Volver a la web</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const info = {
+      cactus: {
+        nombre: "Cactus",
+        desc: "Ideal si tienes poco tiempo y te olvidas de regar.",
+        url: "https://www.google.com/search?q=Comprar+cactus"
+      },
+      suculenta: {
+        nombre: "Suculenta",
+        desc: "Fácil de cuidar, bonita y compacta para interior luminoso.",
+        url: "https://www.google.com/search?q=Comprar+suculentas"
+      },
+      monstera: {
+        nombre: "Monstera deliciosa",
+        desc: "Hoja grande y tropical; ama la luz indirecta y algo de cuidados.",
+        url: "https://www.google.com/search?q=Comprar+monstera"
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    const key = params.get("p") || "cactus";
+    const item = info[key] || info.cactus;
+
+    document.getElementById("nombre-planta").textContent = item.nombre;
+    document.getElementById("desc-planta").textContent = item.desc;
+    document.getElementById("btn-buy").href = item.url;
+  </script>
+</body>
+</html>

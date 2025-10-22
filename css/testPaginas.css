@@ -1,0 +1,227 @@
+/* === Variables & base === */
+:root{
+  --verde-fondo: #2f6b44; /* fondo de inicio y resultado */
+  --verde-claro: #e9f4ea; /* fondo de la página de preguntas */
+  --blanco: #ffffff;
+  --texto-verde: #2f6b44;
+  --amarillo: #ffd166; /* color para botón volver a la web */
+  --verde-acento: #06d6a0; /* color para botón comprar */
+  --radius: 12px;
+  --container-w: 760px;
+}
+
+/* Tipografía fluida */
+html{
+  font-size: clamp(15px, 1.6vw, 18px);
+  box-sizing: border-box;
+}
+*,*::before,*::after{ box-sizing: inherit; }
+
+/* Fondo por defecto para todas las páginas (verde) */
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: var(--blanco);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3vh 0;
+  background: var(--verde-fondo); /* fondo base */
+}
+
+/* Excepción: página de preguntas con fondo claro */
+.preguntas-body{
+  background: var(--verde-claro);
+  color: var(--texto-verde);
+  align-items:flex-start;
+  padding-top: 4vh;
+  padding-bottom: 6vh;
+}
+
+/* Contenedor */
+.container{
+  width:min(var(--container-w), 94vw);
+  margin: 0 auto;
+  padding: clamp(18px, 3.2vw, 32px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.logo{ width: clamp(72px, 14vw, 140px); height:auto; display:block; margin-bottom: 4px; }
+
+h1{ margin:6px 0; font-size: clamp(1.2rem, 2.2vw, 1.9rem); color:var(--blanco); text-align:center; }
+h2{ margin:0 0 8px; font-size: clamp(1rem,1.7vw,1.2rem); color:inherit; }
+p { margin:0; color: rgba(255,255,255,0.9); }
+
+/* ==== BOTONES (versión unificada y mejorada) ==== */
+
+/* Base común */
+.button,
+a.button,
+a.start,
+.back-button {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: clamp(.9rem, 1vw, 1rem);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Tamaño general */
+.button,
+a.button,
+a.start {
+  padding: clamp(10px, 1.6vw, 14px) clamp(14px, 3vw, 20px);
+}
+
+/* === Variantes === */
+
+/* Botón principal/verde o destacados */
+.start,
+.btn-buy,
+.button.primary {
+  background: var(--verde-acento);
+  color: #fff;
+}
+.start:hover,
+.btn-buy:hover,
+.button.primary:hover {
+  background: #04c18d;
+}
+
+/* Botones blancos/neutros */
+.btn-repeat,
+.button.secondary {
+  background: var(--blanco);
+  color: var(--texto-verde);
+  border: 2px solid rgba(0, 0, 0, 0.04);
+}
+.btn-repeat:hover,
+.button.secondary:hover {
+  background: #f8f8f8;
+}
+
+/* Botón amarillo “Volver a la web” */
+.btn-home {
+  background: var(--amarillo);
+  color: var(--texto-verde);
+}
+.btn-home:hover {
+  background: #ffcf4a;
+}
+
+/* Botón negro “Volver” (boceto) */
+.back-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.back-button:hover {
+  background: #222;
+}
+
+/* Contenedores de botones múltiples */
+.result-buttons,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Diseño responsive */
+@media (max-width: 520px) {
+  .result-buttons,
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .button,
+  .back-button {
+    width: 100%;
+  }
+}
+
+/* Tarjetas y contenido */
+
+.question-card{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--blanco);
+  color: var(--texto-verde);
+  border-radius: var(--radius);
+  padding: clamp(16px, 2.5vw, 28px);
+  box-shadow: 0 12px 30px rgba(12,12,12,0.08);
+  text-align:left;
+}
+.question-card h2{ color: var(--texto-verde); margin-bottom: 8px; }
+
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:8px;
+}
+.options label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  background: rgba(0,0,0,0.02);
+  transition: transform .12s ease, background .12s ease;
+  font-weight:600;
+}
+.options input[type="radio"]{
+  width:18px;
+  height:18px;
+  accent-color: var(--texto-verde);
+}
+.options input[type="radio"]:checked + span,
+.options label:hover{
+  transform: translateY(-2px);
+  background: rgba(0,0,0,0.03);
+}
+
+/* Ocultar preguntas no activas */
+.hidden{ display:none !important; }
+
+/* Tarjeta resultado */
+.result-card{
+  width:100%;
+  max-width:720px;
+  background: var(--blanco);
+  color: var(--texto-verde);
+  padding: clamp(18px,2.8vw,28px);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  text-align:left;
+}
+
+/* Responsivo */
+@media (max-width:520px){
+  .container{ padding: 18px; }
+  .question-card, .result-card{ padding: 14px; }
+}
