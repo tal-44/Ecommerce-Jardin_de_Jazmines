@@ -2,6 +2,13 @@
 <html lang="es">
 
 <head>
+        <!--
+            pages/footer.html
+            - Propósito: partial del footer con enlaces, búsqueda.
+            - Dependencias: ../css/footer.css (estilos) y js/footer.js para interacción.
+            - Relación: se puede insertar en `index.html`;
+              en ese caso index.html normalmente ya carga los estilos.
+        -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer - Jardín de Jazmines</title>
@@ -42,10 +49,10 @@
                 <div class="links-column">
                     <h3 class="column-title">Help</h3>
                     <ul class="links-list">
-                        <li><a href="temp.html" class="footer-link">Conócenos</a></li> <!-- redirigir-->
-                        <li><a href="temp.html" class="footer-link">Catálogo</a></li>
+                        <li><a href="temp.html" class="footer-link">Conócenos</a></li> <!-- revisar: ruta temporal -->
+                        <li><a href="temp.html" class="footer-link">Catálogo</a></li> <!-- revisar: ruta temporal -->
                         <!-- redirigir a catalogo.html cuando exista-->
-                        <li><a href="temp.html" class="footer-link">Registro</a></li>
+                        <li><a href="temp.html" class="footer-link">Registro</a></li> <!-- revisar: ruta temporal -->
                         <!-- redirigir a registro.html cuando exista-->
                     </ul>
                 </div>
@@ -64,6 +71,7 @@
         </div>
     </footer>
 
+    <!-- Inicializa comportamientos del footer. En index.html se carga vía $.getScript tras insertar el partial. -->
     <script src="../js/footer.js"></script>
 </body>
 

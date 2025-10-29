@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!--
+    index.html
+    - Propósito: página principal que inserta los partials del header/footer.
+    - Dependencias: jQuery; incluye css/header.css y css/footer.css.
+    - Relación: carga `pages/header.html` y `pages/footer.html` y sus scripts mediante $.getScript.
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce - Jardín de Jazmines</title>
     <link rel="stylesheet" href="css/index.css">
+    <!-- Incluir estilos del header/footer aquí para que los partials cargados por AJAX tengan estilos disponibles -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <!-- Iconos usados en los partials del header/footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
         </script>
 
+    <!-- Carga parcial del header/footer y ejecución de sus scripts.
+        - Los selectores (".header-container", ".footer-container") limitan la inserción al contenedor principal del partial.
+        - $.getScript se usa en el callback para asegurar que el JS se ejecute tras insertar el HTML.
+        revisar: esta dependencia de jQuery + $.getScript es frágil; considerar fetch() + import dinámico o un cargador central.
+    -->
     <script>
         $(function () {
             $("#header").load("./pages/header.html .header-container", function () { $.getScript("js/header.js") });
@@ -47,23 +61,23 @@
     </section>
 
     <section class="seccion-temporadas">
-    <div class="container-temporadas">
-        <h2 class="titulo-temporadas">Buscar por Temporada</h2>
-        <div class="grid-temporadas">
-            
-            <a href="catalogo.php?temporada=verano" class="tarjeta-temporada">
-                <img src="img/temporadas/verano.jpg" alt="Verano">
-                <div class="overlay-temporada">
-                    <h3>Verano</h3>
-                    <p>Plantas resistentes al calor</p>
-                </div>
-            </a>
-            
-            <!-- Similar para primavera, otoño, invierno -->
-            
+        <div class="container-temporadas">
+            <h2 class="titulo-temporadas">Buscar por Temporada</h2>
+            <div class="grid-temporadas">
+
+                <a href="catalogo.php?temporada=verano" class="tarjeta-temporada">
+                    <img src="img/temporadas/verano.jpg" alt="Verano">
+                    <div class="overlay-temporada">
+                        <h3>Verano</h3>
+                        <p>Plantas resistentes al calor</p>
+                    </div>
+                </a>
+
+                <!-- Similar para primavera, otoño, invierno -->
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

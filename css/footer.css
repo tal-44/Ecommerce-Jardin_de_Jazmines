@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* Estilos del footer)
+  - Reuso de variables para mantener coherencia visual con header.
 /* colores temporales, cambiar cuando se decida una paleta */
 :root {
   --verde: #4a7c59;
@@ -36,6 +37,8 @@ body {
   align-items: flex-start;
   width: 100%;
 }
+
+/* revisar: contraste del texto sobre --negro; comprobar ratios para accesibilidad */
 
 .footer-left {
   flex: 1;
@@ -141,7 +144,8 @@ body {
 }
 
 .search-input::placeholder {
-  color: var(--gris-texto);
+  /* Placeholder más claro para indicar campo editable */
+  color: var(--gris-claro);
 }
 
 .search-input:focus {
@@ -197,7 +201,8 @@ body {
 }
 
 .footer-link {
-  color: var(--text-gray);
+  /* Texto de enlaces del footer: tono medio para buen contraste sobre fondo oscuro */
+  color: var(--gris);
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transicion);
@@ -272,7 +277,8 @@ body {
   
   .search-input {
     border-radius: 25px;
-    border-right: 2px solid var(--border-color);
+  /* Usar gris-claro para el borde en móviles (variable existente) */
+  border-right: 2px solid var(--gris-claro);
   }
   
   .search-btn {

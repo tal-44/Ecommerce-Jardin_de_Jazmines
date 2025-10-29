@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* =======================================
-   HEADER.CSS - VERSIÓN CORREGIDA Y LIMPIA
-   Solo se agregó reset CSS mínimo
-   ======================================== */
+/*
+    css/header.css
+    - Propósito: estilos del header (partial).
+    - Dependencias: Google Fonts (Poppins). Mantener selectores usados por JS (.nav-button, .icon-button, .header-container).
+    - Relación: se usa standalone cuando se inserta en `index.html`.
+*/
 
-/* Variables de color */
 :root {
-    --verde: #4a7c59;
-    --verde-claro: #a4c3b2;
-    --gris: #6c757d;
-    --gris-claro: #e9ecef;
-    --blanco: #ffffff;
-    --sombra: 0 2px 4px rgba(0,0,0,0.1);
-    --transicion: all 0.3s ease;
+        /* revisar: estas variables también existen en footer.css; considerar unificar en un archivo global */
+        --verde: #4a7c59;
+        --verde-claro: #a4c3b2;
+        --gris: #6c757d;
+        --gris-claro: #e9ecef;
+        --blanco: #ffffff;
+        --sombra: 0 2px 4px rgba(0,0,0,0.1);
+        --transicion: all 0.3s ease;
 }
 
 /* Reset CSS básico (AGREGADO PARA SOLUCIONAR MÁRGENES) */
@@ -198,6 +200,12 @@ body {
     transform: scale(1.1);
 }
 
+.nav-button:focus,
+.icon-button:focus {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
 /* ========================================
    MENÚ DESPLEGABLE USUARIO
    ======================================== */
@@ -255,4 +263,18 @@ body {
     height: 1px;
     background: var(--gris-claro);
     margin: 8px 0;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+  animation: aparecer 0.6s ease-out;
+  will-change: transform;
+}
+
+.promo-text {
+  will-change: transform;
 }

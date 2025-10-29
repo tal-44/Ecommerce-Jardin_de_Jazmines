@@ -1,9 +1,17 @@
+/*
+  js/footer.js
+  Propósito: manejar la interacción del footer (registro, búsqueda, enlaces internos).
+  Dependencias: espera `.footer-container` en el DOM; se carga tras insertar el partial.
+  Por terminar o decidir si implementar en la version final
+*/
+
 function temp() {
     alert("Funcionalidad aun no implementada.");
 }
 
+// Inicializa handlers del footer.
 function initFooter() {
-    // Evitar inicialización duplicada
+    // Comprobación rápida de existencia y estado para evitar dobles enlaces
     const footerRoot = document.querySelector('.footer-container');
     if (!footerRoot) return;
     if (footerRoot.dataset.jsInitialized === 'true') return;
@@ -11,13 +19,11 @@ function initFooter() {
 
     console.log("js Footer cargado");
 
+    // Registro
     const botonRegistro = document.getElementById("registerBtn");
-    if (botonRegistro) {
-        botonRegistro.addEventListener("click", function(e) {
-            temp();
-        });
-    }
+    if (botonRegistro) botonRegistro.addEventListener("click", function() { temp(); });
 
+    // Búsqueda local
     const botonBuscar = document.getElementById("searchBtn");
     const campoBusqueda = document.getElementById("searchInput");
 
@@ -35,32 +41,26 @@ function initFooter() {
         campoBusqueda.value = "";
     }
 
-    if (botonBuscar) {
-        botonBuscar.addEventListener("click", function (e) {
-            buscar();
-        });
-    }
-
+    if (botonBuscar) botonBuscar.addEventListener("click", buscar);
     if (campoBusqueda) {
+        // revisar: usar 'keypress' puede no capturar todos los casos; considerar 'keydown' o 'submit' del formulario
         campoBusqueda.addEventListener("keypress", function (e) {
-            if (e.key === "Enter") {
-                buscar();
-            }
+            if (e.key === "Enter") buscar();
         });
     }
 
+    // Enlaces internos del footer que apuntan a {temp.html}
     const enlacesFooter = document.querySelectorAll(".footer-link");
     enlacesFooter.forEach(function(enlace) {
         const href = enlace.getAttribute("href");
         if (href && href.includes("temp.html")) {
-            enlace.addEventListener("click", function(e) {
-                temp();
-            });
+            // revisar: basarse en 'includes' es frágil si cambian rutas; preferir clase o data-attribute
+            enlace.addEventListener("click", function(e) { temp(); });
         }
     });
 }
 
-// Inicializar inmediatamente si el DOM ya está listo, o esperar al evento si no
+// Inicializar cuando el DOM esté listo; si ya lo está, ejecutar tras el siguiente tick.
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initFooter);
 } else {
