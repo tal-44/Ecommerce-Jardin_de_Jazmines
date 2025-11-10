@@ -285,3 +285,39 @@ body {
     border-radius: 25px;
   }
 }
+
+/* Información legal necesaria */
+.footer-legal {
+  background: var(--negro);
+  color: var(--gris);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.footer-legal p {
+  margin: 0.25rem 0;
+}
+
+.legal-info {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.legal-info span {
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-legal {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .legal-info span {
+    display: block;
+    margin: 0.25rem 0;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Plantas</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#header").load("./pages/header.html .header-container", function () { $.getScript("js/header.js") });
+      $("#footer").load("./pages/footer.html .footer-container", function () { $.getScript("js/footer.js") });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div id="header"></div>
+  </header>
+  <section class="catalogo-section">
+    <div class="catalogo-container">
+
+      <!-- Selector de Tipo (Plantas o Ramos) -->
+      <div class="tipo-selector">
+        <a href="catalogo.html?tipo=plantas" class="tipo-btn activo">
+          <i class="fas fa-leaf"></i> Plantas
+        </a>
+        <a href="catalogo.html?tipo=ramos" class="tipo-btn">
+          <i class="fas fa-spa"></i> Ramos Pre-hechos
+        </a>
+      </div>
+
+      <aside class="filtros-sidebar">
+        <h2>Filtros</h2>
+        <div class="filtro-grupo">
+          <h3>Temporada</h3>
+          <a href="catalogo.html" class="filtro-link activo">Todas</a>
+          <a href="catalogo.html" class="filtro-link">Primavera</a>
+          <a href="catalogo.html" class="filtro-link">Verano</a>
+          <a href="catalogo.html" class="filtro-link">Otoño</a>
+          <a href="catalogo.html" class="filtro-link">Invierno</a>
+          <a href="catalogo.html" class="filtro-link">Todo el año</a>
+        </div>
+        <div class="filtro-grupo">
+          <h3>Categoría</h3>
+          <a href="catalogo.html" class="filtro-link activo">Todas</a>
+          <a href="catalogo.html" class="filtro-link">Interior</a>
+          <a href="catalogo.html" class="filtro-link">Exterior</a>
+          <a href="catalogo.html" class="filtro-link">Suculentas</a>
+          <a href="catalogo.html" class="filtro-link">Aromáticas</a>
+        </div>
+      </aside>
+
+      <div class="productos-grid-container">
+        <div class="catalogo-header">
+          <h1>Todas las Plantas</h1>
+        </div>
+
+        <div class="productos-grid">
+          <div class="sin-resultados">
+            <i class="fas fa-database fa-3x"></i>
+            <p>Esta es una vista estática sin conexión a base de datos.</p>
+            <p>Para ver el catálogo real, abre <strong>catalogo.php</strong> con un servidor PHP.</p>
+            <a href="index.html" class="btn-reset">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div id="footer"></div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página temporal (estática)</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script>$(function(){ $("#header").load("./header.html .header-container", function(){ $.getScript("../js/header.js") }); $("#footer").load("./footer.html .footer-container", function(){ $.getScript("../js/footer.js") }); });</script>
+</head>
+<body>
+  <header><div id="header"></div></header>
+  <main style="max-width:1000px;margin:2rem auto;padding:1rem;">
+    <h1>Temp (HTML)</h1>
+    <p>Esta es la versión estática de pages/temp.php.</p>
+  </main>
+  <footer><div id="footer"></div></footer>
+</body>
+</html>

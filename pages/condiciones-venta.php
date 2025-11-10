@@ -1,0 +1,200 @@
+<?php
+$page_title = "Condiciones de Venta - Jardín de Jazmines";
+include '../includes/header.php';
+?>
+
+<div class="legal-page-container">
+    <h1>Condiciones Generales de Venta</h1>
+    
+    <section class="legal-section">
+        <h2>1. OBJETO</h2>
+        <p>Las presentes Condiciones Generales de Contratación regulan la relación contractual entre Jardín de Jazmines y los usuarios que realicen compras a través de nuestra tienda online www.jardindejazmines.es.</p>
+        <p>El hecho de realizar un pedido implica la aceptación plena y sin reservas de todas y cada una de las presentes Condiciones Generales de Contratación.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>2. INFORMACIÓN GENERAL</h2>
+        <ul>
+            <li><strong>Denominación social:</strong> Jardín de Jazmines</li>
+            <li><strong>NIF/CIF:</strong> [Número de identificación fiscal]</li>
+            <li><strong>Domicilio social:</strong> [Dirección completa]</li>
+            <li><strong>Email:</strong> [Email de contacto]</li>
+            <li><strong>Teléfono:</strong> [Número de teléfono]</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>3. PRODUCTOS Y SERVICIOS</h2>
+        <p>Jardín de Jazmines se dedica a la venta online de plantas, productos de jardinería y accesorios relacionados. Todos los productos ofrecidos en nuestra web están sujetos a disponibilidad.</p>
+        <p>Las imágenes de los productos son orientativas. Tratándose de plantas vivas, pueden existir ligeras variaciones en tamaño, color y forma debido a su naturaleza.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>4. PROCESO DE COMPRA</h2>
+        <h3>4.1 Realización del pedido</h3>
+        <p>Para realizar un pedido, el usuario deberá:</p>
+        <ol>
+            <li>Seleccionar los productos deseados y añadirlos al carrito</li>
+            <li>Revisar el contenido del carrito</li>
+            <li>Completar sus datos personales y de envío</li>
+            <li>Seleccionar el método de pago</li>
+            <li>Confirmar el pedido</li>
+        </ol>
+        
+        <h3>4.2 Confirmación del pedido</h3>
+        <p>Una vez realizado el pedido, el cliente recibirá un email de confirmación con los detalles de su compra. Este email no implica la aceptación definitiva del pedido, que quedará sujeto a la disponibilidad de los productos y a la validación del pago.</p>
+        
+        <h3>4.3 Disponibilidad</h3>
+        <p>En caso de que algún producto no esté disponible, se informará al cliente y se ofrecerán las siguientes opciones:</p>
+        <ul>
+            <li>Esperar a que el producto esté disponible</li>
+            <li>Sustituir el producto por otro similar</li>
+            <li>Cancelar el pedido con reembolso íntegro del importe abonado</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>5. PRECIOS</h2>
+        <p>Los precios mostrados en la web incluyen IVA (21% salvo indicación contraria) pero no incluyen los gastos de envío, que se añadirán al finalizar el proceso de compra.</p>
+        <p>Jardín de Jazmines se reserva el derecho a modificar los precios en cualquier momento, si bien se respetarán los precios vigentes en el momento de realizar el pedido.</p>
+        <p>En caso de error tipográfico o técnico en los precios, Jardín de Jazmines se reserva el derecho a anular el pedido, informando al cliente de dicha circunstancia.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>6. FORMAS DE PAGO</h2>
+        <p>Los medios de pago aceptados son:</p>
+        <ul>
+            <li>Tarjeta de crédito/débito (Visa, MasterCard, American Express)</li>
+            <li>PayPal</li>
+            <li>Transferencia bancaria (puede retrasar el envío)</li>
+            <li>Contra reembolso (puede aplicarse un recargo)</li>
+        </ul>
+        <p>Todas las transacciones se realizan a través de pasarelas de pago seguras con cifrado SSL.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>7. ENVÍO Y ENTREGA</h2>
+        <h3>7.1 Zonas de envío</h3>
+        <p>Realizamos envíos a toda España peninsular y Baleares. Los envíos a Canarias, Ceuta y Melilla están sujetos a condiciones especiales debido a las restricciones fitosanitarias.</p>
+        
+        <h3>7.2 Gastos de envío</h3>
+        <p>Los gastos de envío se calcularán en función del peso, volumen y destino del pedido. Se informará del coste exacto antes de finalizar la compra.</p>
+        <p>Envío gratuito en pedidos superiores a [X]€ a península.</p>
+        
+        <h3>7.3 Plazos de entrega</h3>
+        <p>Los plazos de entrega estimados son:</p>
+        <ul>
+            <li>Península: 3-5 días laborables</li>
+            <li>Baleares: 5-7 días laborables</li>
+            <li>Canarias, Ceuta y Melilla: 7-10 días laborables</li>
+        </ul>
+        <p>Los plazos comienzan a contar desde la confirmación del pago. En temporada alta (primavera) los plazos pueden verse incrementados.</p>
+        
+        <h3>7.4 Recepción del pedido</h3>
+        <p>Es responsabilidad del cliente revisar el estado del paquete en el momento de la entrega. Si el paquete presenta daños externos evidentes, debe hacerse constar en el albarán de entrega antes de firmar.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>8. GARANTÍA Y DEVOLUCIONES</h2>
+        <h3>8.1 Garantía de las plantas</h3>
+        <p>Garantizamos que todas nuestras plantas salen del vivero en perfectas condiciones. Si una planta llega en mal estado o muere en los 7 días siguientes a la recepción, la sustituiremos sin coste adicional, previa presentación de fotografías del estado de la planta.</p>
+        <p>Esta garantía no cubre daños causados por un cuidado inadecuado por parte del cliente.</p>
+        
+        <h3>8.2 Productos defectuosos</h3>
+        <p>Si un producto llega defectuoso o no se corresponde con el pedido, el cliente dispone de 7 días para comunicarlo. Procederemos a la sustitución o reembolso según prefiera el cliente.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>9. PROTECCIÓN DE DATOS</h2>
+        <p>Los datos personales facilitados durante el proceso de compra serán tratados conforme a lo dispuesto en nuestra <a href="politica-privacidad.php">Política de Privacidad</a>.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>10. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h2>
+        <p>Las presentes Condiciones Generales de Contratación se rigen por la legislación española.</p>
+        <p>Para la resolución de cualquier controversia las partes se someten a los Juzgados y Tribunales del domicilio del consumidor.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>11. CONTACTO</h2>
+        <p>Para cualquier consulta sobre estas condiciones de venta, puede contactarnos en:</p>
+        <ul>
+            <li>Email: [email de contacto]</li>
+            <li>Teléfono: [número de teléfono]</li>
+            <li>Dirección: [dirección postal]</li>
+        </ul>
+    </section>
+</div>
+
+<style>
+.legal-page-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    line-height: 1.8;
+}
+
+.legal-page-container h1 {
+    color: var(--verde, #4a7c59);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--verde, #4a7c59);
+    padding-bottom: 1rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+    color: var(--verde, #4a7c59);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-section h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.legal-section p, .legal-section ul, .legal-section ol {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.legal-section ul, .legal-section ol {
+    padding-left: 2rem;
+}
+
+.legal-section li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-section a {
+    color: var(--verde, #4a7c59);
+    text-decoration: underline;
+}
+
+.legal-section a:hover {
+    color: var(--verde-claro, #a4c3b2);
+}
+
+@media (max-width: 768px) {
+    .legal-page-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .legal-page-container h1 {
+        font-size: 2rem;
+    }
+    
+    .legal-section h2 {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<?php include '../includes/footer.php'; ?>

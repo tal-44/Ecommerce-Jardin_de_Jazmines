@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-        <!--
+    <!--
             pages/header.html
             - Propósito: partial del header. Contiene estructura y enlaces del header.
             - Dependencias: ../css/header.css y FontAwesome si se abre standalone.
@@ -28,23 +28,16 @@
         <div class="main-header">
             <div class="header-left">
                 <a href="../index.html" class="logo">
-                    <img src="../assets/logo.png" alt="Logo Jardín de Jazmines" class="logo-icon">
+                    <img src="../img/logo.png" alt="Logo Jardín de Jazmines" class="logo-icon"
+                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'50\' height=\'50\'%3E%3Ccircle cx=\'25\' cy=\'25\' r=\'25\' fill=\'%234a7c59\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-size=\'20\' font-weight=\'bold\'%3EP%3C/text%3E%3C/svg%3E'; this.alt='Logo (pendiente)';">
                 </a>
             </div>
 
             <nav class="header-center">
-                <a href="../pages/temp.html" class="nav-button"> <!-- redirigir a catalogo.html cuando exista-->
-                    <i class="fas fa-book"></i> Catálogo
-                </a>
-                <a href="#" class="nav-button"> <!-- revisar: placeholder href="#" - actualizar ruta real -->
-                    <i class="fas fa-flask"></i> Test
-                </a>
-                <a href="#" class="nav-button"> <!-- revisar: placeholder href="#" - actualizar ruta real -->
-                    <i class="fas fa-tools"></i> Catálogo herramientas
-                </a>
-                <a href="#" class="nav-button"> <!-- revisar: placeholder href="#" - actualizar ruta real -->
-                    <i class="fas fa-seedling"></i> Planta de temporada
-                </a>
+                <a href="../index.html" class="nav-button">Inicio</a>
+                <a href="../catalogo.html" class="nav-button">Plantas</a>
+                <a href="../catalogo.html?tipo=herramientas" class="nav-button">Herramientas</a>
+                <a href="../catalogo.html?tipo=ramos" class="nav-button">Ramos</a>
             </nav>
 
             <div class="header-right">
@@ -54,8 +47,7 @@
                 </button>
 
                 <div class="user-menu">
-                    <button class="icon-button" title="Perfil de usuario" id="btnUserMenu" aria-expanded="false"
-                        aria-haspopup="true" aria-label="Menú de usuario">
+                    <button class="icon-button" id="btnUserMenu" aria-expanded="false" title="Menú de usuario">
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="user-dropdown" id="userDropdown" role="region" aria-labelledby="btnUserMenu">

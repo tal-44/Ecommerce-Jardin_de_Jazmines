@@ -1,0 +1,215 @@
+<?php
+$page_title = "Política de Cookies - Jardín de Jazmines";
+include '../includes/header.php';
+?>
+
+<div class="legal-page-container">
+    <h1>Política de Cookies</h1>
+    
+    <section class="legal-section">
+        <h2>1. ¿QUÉ SON LAS COOKIES?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet o móvil) cuando visita una página web. Las cookies permiten que la web reconozca su dispositivo y almacene cierta información sobre sus preferencias o acciones pasadas.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>2. ¿QUÉ TIPOS DE COOKIES UTILIZAMOS?</h2>
+        
+        <h3>Según su finalidad:</h3>
+        <ul>
+            <li><strong>Cookies técnicas:</strong> Permiten la navegación y el uso de las diferentes opciones de la web (controlar el tráfico, identificar la sesión, acceder a partes de acceso restringido, etc.). Son necesarias para el funcionamiento de la web.</li>
+            <li><strong>Cookies de personalización:</strong> Permiten acceder al servicio con características predefinidas en función de criterios en el terminal del usuario (idioma, tipo de navegador, configuración regional, etc.).</li>
+            <li><strong>Cookies de análisis:</strong> Permiten realizar el seguimiento y análisis del comportamiento de los usuarios en nuestra web. La información recogida se utiliza para la medición de la actividad y elaboración de perfiles de navegación para mejorar nuestros servicios.</li>
+            <li><strong>Cookies publicitarias:</strong> Permiten gestionar los espacios publicitarios de la web según criterios como el contenido editado o la frecuencia de los anuncios.</li>
+        </ul>
+
+        <h3>Según su duración:</h3>
+        <ul>
+            <li><strong>Cookies de sesión:</strong> Diseñadas para recabar y almacenar datos mientras el usuario accede a la web. Se eliminan al cerrar el navegador.</li>
+            <li><strong>Cookies persistentes:</strong> Los datos se almacenan en el terminal y pueden ser accedidos y tratados durante un período definido por el responsable de la cookie (puede ir de minutos a varios años).</li>
+        </ul>
+
+        <h3>Según su gestión:</h3>
+        <ul>
+            <li><strong>Cookies propias:</strong> Son enviadas al dispositivo del usuario desde un equipo o dominio gestionado por Jardín de Jazmines.</li>
+            <li><strong>Cookies de terceros:</strong> Son enviadas al dispositivo del usuario desde un equipo o dominio que no es gestionado por nosotros, sino por otra entidad que trata los datos obtenidos.</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>3. COOKIES UTILIZADAS EN ESTA WEB</h2>
+        <table class="cookies-table">
+            <thead>
+                <tr>
+                    <th>Cookie</th>
+                    <th>Tipo</th>
+                    <th>Finalidad</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PHPSESSID</td>
+                    <td>Técnica - Propia</td>
+                    <td>Mantener la sesión del usuario</td>
+                    <td>Sesión</td>
+                </tr>
+                <tr>
+                    <td>cookie_consent</td>
+                    <td>Técnica - Propia</td>
+                    <td>Almacenar el consentimiento de cookies</td>
+                    <td>1 año</td>
+                </tr>
+                <tr>
+                    <td>_ga</td>
+                    <td>Análisis - Terceros (Google Analytics)</td>
+                    <td>Distinguir usuarios únicos</td>
+                    <td>2 años</td>
+                </tr>
+                <tr>
+                    <td>_gid</td>
+                    <td>Análisis - Terceros (Google Analytics)</td>
+                    <td>Distinguir usuarios</td>
+                    <td>24 horas</td>
+                </tr>
+                <tr>
+                    <td>_gat</td>
+                    <td>Análisis - Terceros (Google Analytics)</td>
+                    <td>Limitar el porcentaje de solicitudes</td>
+                    <td>1 minuto</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em>Nota: Esta tabla debe actualizarse según las cookies realmente utilizadas en la web.</em></p>
+    </section>
+
+    <section class="legal-section">
+        <h2>4. COOKIES DE TERCEROS</h2>
+        <p>Esta web utiliza servicios de terceros que recopilan información con fines:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> Estadísticas de uso y tráfico web. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a></li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>5. ¿CÓMO GESTIONAR LAS COOKIES?</h2>
+        <p>Puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones de su navegador:</p>
+        <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+            <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+            <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+            <li><a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank" rel="noopener">Opera</a></li>
+        </ul>
+        <p><strong>Importante:</strong> Si deshabilita las cookies, es posible que algunas funcionalidades de la web no estén disponibles.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>6. CONSENTIMIENTO</h2>
+        <p>Al navegar y continuar en nuestra web, usted está consintiendo el uso de las cookies antes enunciadas, por los plazos señalados y en las condiciones contenidas en la presente Política de Cookies.</p>
+        <p>En cualquier momento podrá revocar su consentimiento mediante la configuración de su navegador o a través del panel de configuración de cookies disponible en nuestra web.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>7. ACTUALIZACIONES</h2>
+        <p>Jardín de Jazmines puede modificar esta Política de Cookies en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos.</p>
+        <p>Cuando se produzcan cambios significativos en esta Política de Cookies, se comunicará a los usuarios mediante un aviso en la web.</p>
+    </section>
+</div>
+
+<style>
+.legal-page-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    line-height: 1.8;
+}
+
+.legal-page-container h1 {
+    color: var(--verde, #4a7c59);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--verde, #4a7c59);
+    padding-bottom: 1rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+    color: var(--verde, #4a7c59);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-section h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.legal-section p, .legal-section ul {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.legal-section ul {
+    padding-left: 2rem;
+}
+
+.legal-section li {
+    margin-bottom: 0.5rem;
+}
+
+.cookies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.cookies-table th, .cookies-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.cookies-table th {
+    background-color: var(--verde, #4a7c59);
+    color: white;
+    font-weight: 600;
+}
+
+.cookies-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.cookies-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .legal-page-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .legal-page-container h1 {
+        font-size: 2rem;
+    }
+    
+    .legal-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .cookies-table {
+        font-size: 0.85rem;
+    }
+    
+    .cookies-table th, .cookies-table td {
+        padding: 8px;
+    }
+}
+</style>
+
+<?php include '../includes/footer.php'; ?>

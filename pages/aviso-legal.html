@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso Legal - Jardín de Jazmines (Versión estática)</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $("#header").load("./header.html .header-container", function(){ $.getScript("../js/header.js") });
+      $("#footer").load("./footer.html .footer-container", function(){ $.getScript("../js/footer.js") });
+    });
+  </script>
+  <style>
+    .legal-page-container {max-width:1200px;margin:2rem auto;padding:2rem;background:#fff;line-height:1.8;}
+    .legal-page-container h1 {color:var(--verde,#4a7c59);font-size:2.5rem;margin-bottom:2rem;border-bottom:3px solid var(--verde,#4a7c59);padding-bottom:1rem;}
+    .legal-section {margin-bottom:2rem;}
+    .legal-section h2 {color:var(--verde,#4a7c59);font-size:1.5rem;margin-bottom:1rem;}
+    .legal-section p, .legal-section ul {color:#333;margin-bottom:1rem;}
+    .legal-section ul {padding-left:2rem;}
+    .legal-section li {margin-bottom:0.5rem;}
+    @media (max-width:768px){.legal-page-container{padding:1rem;margin:1rem;} .legal-page-container h1{font-size:2rem;} .legal-section h2{font-size:1.25rem;}}
+  </style>
+</head>
+<body>
+  <header><div id="header"></div></header>
+  <div class="legal-page-container">
+    <h1>Aviso Legal</h1>
+    <section class="legal-section">
+      <h2>1. DATOS IDENTIFICATIVOS</h2>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002 (LSSI-CE), se informa a los usuarios:</p>
+      <ul>
+        <li><strong>Titular:</strong> Jardín de Jazmines [Razón social]</li>
+        <li><strong>NIF/CIF:</strong> [Número]</li>
+        <li><strong>Domicilio social:</strong> [Dirección]</li>
+        <li><strong>Teléfono:</strong> [Teléfono]</li>
+        <li><strong>Email:</strong> [Correo]</li>
+        <li><strong>Registro Mercantil:</strong> [Datos inscripción]</li>
+      </ul>
+    </section>
+    <section class="legal-section">
+      <h2>2. OBJETO</h2>
+      <p>Este Aviso Legal regula el uso del sitio web. La navegación implica la aceptación plena y sin reservas de este texto.</p>
+    </section>
+    <section class="legal-section">
+      <h2>3. CONDICIONES DE USO</h2>
+      <p>El usuario se compromete a no emplear los contenidos para actividades ilícitas, difundir malware, ni dañar sistemas.</p>
+      <ul>
+        <li>Actividades ilícitas o contrarias al orden público.</li>
+        <li>Difusión de contenidos racistas, xenófobos o ilegales.</li>
+        <li>Intentos de dañar sistemas físicos o lógicos.</li>
+      </ul>
+    </section>
+    <section class="legal-section">
+      <h2>4. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
+      <p>Todos los elementos del sitio (texto, imágenes, diseño) están protegidos. Queda prohibida la reproducción sin autorización escrita.</p>
+    </section>
+    <section class="legal-section">
+      <h2>5. EXCLUSIÓN DE GARANTÍAS</h2>
+      <p>No garantizamos ausencia total de errores ni continuidad absoluta del servicio.</p>
+    </section>
+    <section class="legal-section">
+      <h2>6. MODIFICACIONES</h2>
+      <p>Nos reservamos el derecho de modificar contenidos o la estructura sin previo aviso.</p>
+    </section>
+    <section class="legal-section">
+      <h2>7. JURISDICCIÓN</h2>
+      <p>La relación se somete a la legislación española y tribunales de [Ciudad].</p>
+    </section>
+  </div>
+</body>
+<footer><div id="footer"></div></footer>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - Vista estática</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/producto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $("#header").load("./pages/header.html .header-container", function(){ $.getScript("js/header.js") });
+      $("#footer").load("./pages/footer.html .footer-container", function(){ $.getScript("js/footer.js") });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div id="header"></div>
+  </header>
+  <div class="producto-detalle-container">
+    <nav class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span class="separador">/</span>
+      <a href="catalogo.html">Catálogo</a>
+      <span class="separador">/</span>
+      <span class="actual">Producto (vista estática)</span>
+    </nav>
+
+    <div class="producto-grid">
+      <div class="producto-imagen-contenedor">
+        <div class="imagen-principal">
+          <img src="img/plantas/default.jpg" alt="Producto" id="imagenPrincipal">
+          <span class="badge-temporada badge-primavera">
+            <i class="fas fa-calendar-alt"></i>
+            Primavera
+          </span>
+        </div>
+      </div>
+
+      <div class="producto-info-contenedor">
+        <div class="categoria-badge"><i class="fas fa-tag"></i> Categoría</div>
+        <h1 class="producto-nombre">Producto en vista estática</h1>
+        <p class="nombre-cientifico"><i class="fas fa-leaf"></i> Nombre científico</p>
+        <div class="precio-stock">
+          <div class="precio-principal"><span class="precio">€00,00</span></div>
+          <div class="stock-info">
+            <span class="stock disponible"><i class="fas fa-info-circle"></i> Información no disponible sin BD</span>
+          </div>
+        </div>
+        <div class="descripcion-producto">
+          <h3><i class="fas fa-info-circle"></i> Descripción</h3>
+          <p>Esta página es una versión estática para desarrollo sin base de datos. Abre <strong>producto.php</strong> con servidor PHP para ver datos reales.</p>
+        </div>
+        <a href="catalogo.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al catálogo</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div id="footer"></div>
+  </footer>
+</body>
+</html>

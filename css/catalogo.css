@@ -16,13 +16,52 @@
     gap: 2rem;
 }
 
+
+.tipo-selector {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tipo-btn {
+    padding: 0.75rem 2rem;
+    background: white;
+    color: #6c757d;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tipo-btn:hover {
+    background: #a4c3b2;
+    color: #2f6b44;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tipo-btn.activo {
+    background: #4a7c59;
+    color: white;
+}
+
+.tipo-btn i {
+    font-size: 1.2rem;
+}
+
 /* ========== SIDEBAR FILTROS ========== */
 
 .filtros-sidebar {
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     height: fit-content;
     position: sticky;
     top: 100px;
@@ -95,13 +134,13 @@
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .producto-link {
@@ -137,15 +176,48 @@
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
 }
 
-.badge-temporada.primavera { background-color: #98D8C8; color: #1a5039; }
-.badge-temporada.verano { background-color: #FFD700; color: #8B4513; }
-.badge-temporada.otoño { background-color: #D2691E; color: white; }
-.badge-temporada.invierno { background-color: #4682B4; color: white; }
-.badge-temporada.todo_año { background-color: #4a7c59; color: white; }
+.badge-temporada.primavera {
+    background-color: #98D8C8;
+    color: #1a5039;
+}
+
+.badge-temporada.verano {
+    background-color: #FFD700;
+    color: #8B4513;
+}
+
+.badge-temporada.otoño {
+    background-color: #D2691E;
+    color: white;
+}
+
+.badge-temporada.invierno {
+    background-color: #4682B4;
+    color: white;
+}
+
+.badge-temporada.todo_año {
+    background-color: #4a7c59;
+    color: white;
+}
+
+/* Badge de tamaño (solo para ramos) */
+.badge-tamaño {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgba(74, 124, 89, 0.9);
+    color: white;
+}
 
 .producto-info {
     padding: 1.5rem;
@@ -250,12 +322,82 @@
     background-color: #2f6b44;
 }
 
+/* ========== ESTILOS ESPECÍFICOS PARA RAMOS ========== */
+
+.ramo-card {
+    border-left: 4px solid #d4af37;
+}
+
+.ocasion-ramo {
+    font-size: 0.9rem;
+    color: #4a7c59;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.ocasion-ramo i {
+    margin-right: 0.3rem;
+}
+
+.descripcion-corta {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.ramo-extras {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.extra-icon {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background: #e8f5e9;
+    color: #2f6b44;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.extra-icon i {
+    margin-right: 0.2rem;
+}
+
+.advertencia-bd {
+    background: #fff3cd;
+    border: 2px solid #f39c12;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.advertencia-bd h3 {
+    color: #f39c12;
+    margin-bottom: 1rem;
+}
+
+.advertencia-bd code {
+    background: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #c0392b;
+}
+
+.advertencia-bd ol {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .catalogo-container {
         grid-template-columns: 1fr;
     }
-    
+
     .filtros-sidebar {
         position: static;
     }

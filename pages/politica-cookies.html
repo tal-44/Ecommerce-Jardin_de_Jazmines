@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Cookies - Jardín de Jazmines (Estática)</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script>$(function(){ $("#header").load("./header.html .header-container", function(){ $.getScript("../js/header.js") }); $("#footer").load("./footer.html .footer-container", function(){ $.getScript("../js/footer.js") }); });</script>
+  <style>
+    .legal-page-container {max-width:1200px;margin:2rem auto;padding:2rem;background:#fff;line-height:1.8;}
+    .legal-page-container h1 {color:var(--verde,#4a7c59);font-size:2.5rem;margin-bottom:2rem;border-bottom:3px solid var(--verde,#4a7c59);padding-bottom:1rem;}
+    .legal-section {margin-bottom:2rem;}
+    .legal-section h2 {color:var(--verde,#4a7c59);font-size:1.5rem;margin-bottom:1rem;}
+    .legal-section h3 {color:#333;font-size:1.15rem;margin:1rem 0 .5rem;}
+    table {width:100%;border-collapse:collapse;margin:1rem 0;}
+    th,td {border:1px solid #ddd;padding:10px;text-align:left;}
+    th {background:var(--verde,#4a7c59);color:#fff;}
+    tr:nth-child(even){background:#f9f9f9;}
+    @media (max-width:768px){.legal-page-container{padding:1rem;margin:1rem;} .legal-page-container h1{font-size:2rem;} table{font-size:.85rem;} th,td{padding:6px;}}
+  </style>
+</head>
+<body>
+  <header><div id="header"></div></header>
+  <div class="legal-page-container">
+    <h1>Política de Cookies</h1>
+    <section class="legal-section">
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>Archivos pequeños que el navegador almacena para recordar preferencias y mejorar la experiencia.</p>
+    </section>
+    <section class="legal-section">
+      <h2>2. Tipos de cookies</h2>
+      <h3>Por finalidad</h3>
+      <ul>
+        <li>Técnicas</li>
+        <li>Personalización</li>
+        <li>Análisis</li>
+        <li>Publicidad</li>
+      </ul>
+      <h3>Por duración</h3>
+      <ul>
+        <li>Sesión</li>
+        <li>Persistentes</li>
+      </ul>
+      <h3>Por gestión</h3>
+      <ul>
+        <li>Propias</li>
+        <li>Terceros</li>
+      </ul>
+    </section>
+    <section class="legal-section">
+      <h2>3. Ejemplo de cookies</h2>
+      <table>
+        <thead><tr><th>Cookie</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr></thead>
+        <tbody>
+          <tr><td>cookie_consent</td><td>Técnica</td><td>Guardar consentimiento</td><td>1 año</td></tr>
+          <tr><td>_ga</td><td>Análisis</td><td>Google Analytics ID</td><td>2 años</td></tr>
+          <tr><td>_gid</td><td>Análisis</td><td>Distinción usuarios</td><td>24 h</td></tr>
+        </tbody>
+      </table>
+      <p><em>Verifique y ajuste según cookies reales en producción.</em></p>
+    </section>
+    <section class="legal-section">
+      <h2>4. Cookies de terceros</h2>
+      <p>Servicios de analítica y rendimiento (p.ej. Google). Consulte sus políticas para más detalle.</p>
+    </section>
+    <section class="legal-section">
+      <h2>5. Gestión</h2>
+      <p>Puede borrar o bloquear cookies desde la configuración del navegador.</p>
+    </section>
+    <section class="legal-section">
+      <h2>6. Consentimiento</h2>
+      <p>La continuación de la navegación implica aceptación. Puede revocarlo configurando su navegador.</p>
+    </section>
+  </div>
+</body>
+<footer><div id="footer"></div></footer>
+</html>

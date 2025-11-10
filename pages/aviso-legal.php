@@ -1,0 +1,117 @@
+<?php
+$page_title = "Aviso Legal - Jardín de Jazmines";
+include '../includes/header.php';
+?>
+
+<div class="legal-page-container">
+    <h1>Aviso Legal</h1>
+    
+    <section class="legal-section">
+        <h2>1. DATOS IDENTIFICATIVOS</h2>
+        <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa a los usuarios de la página web que:</p>
+        <ul>
+            <li><strong>Titular:</strong> Jardín de Jazmines [Nombre completo o razón social]</li>
+            <li><strong>NIF/CIF:</strong> [Número de identificación fiscal]</li>
+            <li><strong>Domicilio social:</strong> [Dirección completa]</li>
+            <li><strong>Teléfono:</strong> [Número de teléfono]</li>
+            <li><strong>Email:</strong> [Correo electrónico de contacto]</li>
+            <li><strong>Registro Mercantil:</strong> [Datos de inscripción en el Registro Mercantil]</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>2. OBJETO</h2>
+        <p>El presente aviso legal regula el uso del sitio web www.jardindejazmines.es (en adelante, LA WEB), del que es titular Jardín de Jazmines.</p>
+        <p>La navegación por la web de Jardín de Jazmines atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>3. CONDICIONES DE USO</h2>
+        <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que se ofrecen a través de LA WEB y a no emplearlos para:</p>
+        <ul>
+            <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.</li>
+            <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del terrorismo o atentatorio contra los derechos humanos.</li>
+            <li>Provocar daños en los sistemas físicos y lógicos de Jardín de Jazmines, de sus proveedores o de terceras personas.</li>
+            <li>Introducir o difundir virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar los daños anteriormente mencionados.</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>4. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
+        <p>Jardín de Jazmines es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.).</p>
+        <p>Todos los derechos reservados. En virtud de lo dispuesto en la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Jardín de Jazmines.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>5. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</h2>
+        <p>Jardín de Jazmines no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>6. MODIFICACIONES</h2>
+        <p>Jardín de Jazmines se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>7. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h2>
+        <p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales de [Ciudad].</p>
+    </section>
+</div>
+
+<style>
+.legal-page-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    line-height: 1.8;
+}
+
+.legal-page-container h1 {
+    color: var(--verde, #4a7c59);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--verde, #4a7c59);
+    padding-bottom: 1rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+    color: var(--verde, #4a7c59);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-section p, .legal-section ul {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.legal-section ul {
+    padding-left: 2rem;
+}
+
+.legal-section li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .legal-page-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .legal-page-container h1 {
+        font-size: 2rem;
+    }
+    
+    .legal-section h2 {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<?php include '../includes/footer.php'; ?>

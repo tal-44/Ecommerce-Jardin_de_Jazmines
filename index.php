@@ -88,9 +88,44 @@ include 'includes/header.php';
     <div class="contenedor">
         <div class="barra-verde"></div>
         <div class="contenido">
-            <h1>Test De Plantas</h1>
-            <p>Descubre tu planta ideal</p>
+            <h1>DESCUBRE TU PLANTA IDEAL</h1>
+            <p>Realiza un test breve y descubre con qué planta compartes tu personalidad.</p>
             <button class="boton-test">Realizar Test</button>
+        </div>
+    </div>
+</section>
+
+<section class="seccion-equipo" id="conocenos">
+    <div class="equipo-container">
+        <h2 class="equipo-titulo">¡Conoce a nuestro equipo!</h2>
+        <p class="equipo-subtitulo">Somos una tienda de jardinería apasionada por las plantas y la vida vegetal. Nos encanta contribuir a nuestra comunidad y marcar la diferencia.</p>
+
+        <div class="equipo-grid">
+            <article class="miembro">
+                <img src="img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
+                <!-- no se para que era la imagen de default, pero asi por lo emnos se ve algo -->
+                <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
+                <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir nuevas variedades.</p>
+                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Daniel">RRSS</a>
+            </article>
+
+            <article class="miembro">
+                <img src="img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
+                <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
+                <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
+                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Pau">RRSS</a>
+            </article>
+
+            <article class="miembro">
+                <img src="img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
+                <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
+                <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
+                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Marcos">RRSS</a>
+            </article>
+        </div>
+
+        <div class="equipo-contacto">
+            <a class="btn-contacto" href="mailto:contacto@jardindejazmines.com?subject=Consulta%20desde%20la%20web">Escríbenos</a>
         </div>
     </div>
 </section>

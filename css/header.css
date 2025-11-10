@@ -278,3 +278,9 @@ body {
 .promo-text {
   will-change: transform;
 }
+
+.note-small {
+    font-size: 0.75rem;
+    margin-left: 6px;
+    color: var(--gris);
+}
