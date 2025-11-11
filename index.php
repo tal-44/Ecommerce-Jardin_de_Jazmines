@@ -1,20 +1,61 @@
 <?php
 // ============================================================
-// 1. INCLUIR CONEXIÓN A BD
+// SISTEMA DE FALLBACK A HTML
 // ============================================================
-require_once 'config/conexion.php';
+// Si PHP no puede ejecutarse correctamente, redirigir a index.html
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /index.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/index.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
 
-// ============================================================
-// 2. VARIABLES PARA HEADER
-// ============================================================
-$titulo_pagina = "Inicio - Tienda de Plantas";
-$css_adicional = '<link rel="stylesheet" href="css/index.css">';
-$js_adicional = '<script src="js/index.js"></script>';
+try {
+    // ============================================================
+    // 1. INCLUIR CONEXIÓN A BD
+    // ============================================================
+    if (!file_exists('config/conexion.php')) {
+        throw new Exception("Archivo de conexión no encontrado");
+    }
 
-// ============================================================
-// 3. INCLUIR HEADER
-// ============================================================
-include 'includes/header.php';
+    require_once 'config/conexion.php';
+
+    // Verificar que la conexión se estableció
+    if (!isset($conn) || $conn->connect_error) {
+        throw new Exception("Error de conexión a base de datos");
+    }
+
+    // ============================================================
+    // 2. VARIABLES PARA HEADER
+    // ============================================================
+    $titulo_pagina = "Inicio - Tienda de Plantas";
+    $css_adicional = '<link rel="stylesheet" href="/css/index.css">';
+    $js_adicional = '<script src="/js/index.js"></script>';
+
+    // ============================================================
+    // 3. INCLUIR HEADER
+    // ============================================================
+    if (!file_exists('includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include 'includes/header.php';
+} catch (Exception $e) {
+    // Si hay cualquier error, redirigir a la versión HTML
+    if (!headers_sent()) {
+        header("Location: /index.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/index.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <!-- ============================================================
@@ -27,7 +68,7 @@ include 'includes/header.php';
         <form action="buscar.php" method="GET" class="formulario-busqueda">
             <div class="search-wrapper">
                 <input type="text" name="q" placeholder="Busca tu planta ideal..." required>
-                <button type="submit" class="search-btn">
+                <button type="submit" class="search-btn" aria-label="Buscar">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -42,10 +83,10 @@ include 'includes/header.php';
     <div class="container-temporadas">
         <h2 class="titulo-temporadas">Buscar por Temporada</h2>
         <div class="grid-temporadas">
-            
+
             <!-- Tarjeta PRIMAVERA -->
-            <a href="catalogo.php?temporada=primavera" class="tarjeta-temporada">
-                <img src="img/temporadas/primavera.png" alt="Primavera">
+            <a href="/catalogo.php?temporada=primavera" class="tarjeta-temporada">
+                <img src="/img/temporadas/primavera.png" alt="Primavera">
                 <div class="overlay-temporada">
                     <h3>Primavera</h3>
                     <p>Nuevos brotes y flores</p>
@@ -53,8 +94,8 @@ include 'includes/header.php';
             </a>
 
             <!-- Tarjeta VERANO -->
-            <a href="catalogo.php?temporada=verano" class="tarjeta-temporada">
-                <img src="img/temporadas/verano.png" alt="Verano">
+            <a href="/catalogo.php?temporada=verano" class="tarjeta-temporada">
+                <img src="/img/temporadas/verano.png" alt="Verano">
                 <div class="overlay-temporada">
                     <h3>Verano</h3>
                     <p>Plantas resistentes al calor</p>
@@ -62,8 +103,8 @@ include 'includes/header.php';
             </a>
 
             <!-- Tarjeta OTOÑO -->
-            <a href="catalogo.php?temporada=otoño" class="tarjeta-temporada">
-                <img src="img/temporadas/otono.png" alt="Otoño">
+            <a href="/catalogo.php?temporada=otoño" class="tarjeta-temporada">
+                <img src="/img/temporadas/otono.png" alt="Otoño">
                 <div class="overlay-temporada">
                     <h3>Otoño</h3>
                     <p>Tonos cálidos y acogedores</p>
@@ -71,8 +112,8 @@ include 'includes/header.php';
             </a>
 
             <!-- Tarjeta INVIERNO -->
-            <a href="catalogo.php?temporada=invierno" class="tarjeta-temporada">
-                <img src="img/temporadas/invierno.png" alt="Invierno">
+            <a href="/catalogo.php?temporada=invierno" class="tarjeta-temporada">
+                <img src="/img/temporadas/invierno.png" alt="Invierno">
                 <div class="overlay-temporada">
                     <h3>Invierno</h3>
                     <p>Plantas de interior resistentes</p>
@@ -102,7 +143,7 @@ include 'includes/header.php';
 
         <div class="equipo-grid">
             <article class="miembro">
-                <img src="img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
+                <img src="/img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
                 <!-- no se para que era la imagen de default, pero asi por lo emnos se ve algo -->
                 <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
                 <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir nuevas variedades.</p>
@@ -110,14 +151,14 @@ include 'includes/header.php';
             </article>
 
             <article class="miembro">
-                <img src="img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
+                <img src="/img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
                 <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
                 <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
                 <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Pau">RRSS</a>
             </article>
 
             <article class="miembro">
-                <img src="img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
+                <img src="/img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
                 <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
                 <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
                 <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Marcos">RRSS</a>
@@ -131,10 +172,26 @@ include 'includes/header.php';
 </section>
 
 <?php
-// ============================================================
-// 6. INCLUIR FOOTER
-// ============================================================
-include 'includes/footer.php';
+try {
+    // ============================================================
+    // 6. INCLUIR FOOTER
+    // ============================================================
+    if (!file_exists('includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
 
+    include 'includes/footer.php';
+} catch (Exception $e) {
+    // Si falla el footer, redirigir a HTML
+    if (!headers_sent()) {
+        header("Location: /index.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/index.html";</script>';
+        exit;
+    }
+}
+
+// Restaurar error handler original
+restore_error_handler();
 ?>
-

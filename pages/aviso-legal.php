@@ -1,11 +1,42 @@
 <?php
-$page_title = "Aviso Legal - Jardín de Jazmines";
-include '../includes/header.php';
+// ============================================================
+// SISTEMA DE FALLBACK A HTML
+// ============================================================
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /pages/aviso-legal.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/pages/aviso-legal.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
+
+try {
+    $page_title = "Aviso Legal - Jardín de Jazmines";
+
+    if (!file_exists('../includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include '../includes/header.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/aviso-legal.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/aviso-legal.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <div class="legal-page-container">
     <h1>Aviso Legal</h1>
-    
+
     <section class="legal-section">
         <h2>1. DATOS IDENTIFICATIVOS</h2>
         <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa a los usuarios de la página web que:</p>
@@ -59,59 +90,81 @@ include '../includes/header.php';
 </div>
 
 <style>
-.legal-page-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    line-height: 1.8;
-}
-
-.legal-page-container h1 {
-    color: var(--verde, #4a7c59);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--verde, #4a7c59);
-    padding-bottom: 1rem;
-}
-
-.legal-section {
-    margin-bottom: 2rem;
-}
-
-.legal-section h2 {
-    color: var(--verde, #4a7c59);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.legal-section p, .legal-section ul {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.legal-section ul {
-    padding-left: 2rem;
-}
-
-.legal-section li {
-    margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
     .legal-page-container {
-        padding: 1rem;
-        margin: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        line-height: 1.8;
     }
-    
+
     .legal-page-container h1 {
-        font-size: 2rem;
+        color: var(--verde, #4a7c59);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--verde, #4a7c59);
+        padding-bottom: 1rem;
     }
-    
+
+    .legal-section {
+        margin-bottom: 2rem;
+    }
+
     .legal-section h2 {
-        font-size: 1.25rem;
+        color: var(--verde, #4a7c59);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
-}
+
+    .legal-section p,
+    .legal-section ul {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+        padding-left: 2rem;
+    }
+
+    .legal-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page-container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .legal-page-container h1 {
+            font-size: 2rem;
+        }
+
+        .legal-section h2 {
+            font-size: 1.25rem;
+        }
+    }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+</section>
+</div>
+
+<?php
+try {
+    if (!file_exists('../includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
+
+    include '../includes/footer.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/aviso-legal.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/aviso-legal.html";</script>';
+        exit;
+    }
+}
+
+restore_error_handler();
+?>

@@ -1,76 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aviso Legal - Jardín de Jazmines (Versión estática)</title>
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
   <script>
-    $(function(){
-      $("#header").load("./header.html .header-container", function(){ $.getScript("../js/header.js") });
-      $("#footer").load("./footer.html .footer-container", function(){ $.getScript("../js/footer.js") });
+    $(function () {
+      $("#header").load("/pages/header.html .header-container", function () { $.getScript("/js/header.js") });
+      $("#footer").load("/pages/footer.html .footer-container", function () { $.getScript("/js/footer.js") });
     });
   </script>
   <style>
-    .legal-page-container {max-width:1200px;margin:2rem auto;padding:2rem;background:#fff;line-height:1.8;}
-    .legal-page-container h1 {color:var(--verde,#4a7c59);font-size:2.5rem;margin-bottom:2rem;border-bottom:3px solid var(--verde,#4a7c59);padding-bottom:1rem;}
-    .legal-section {margin-bottom:2rem;}
-    .legal-section h2 {color:var(--verde,#4a7c59);font-size:1.5rem;margin-bottom:1rem;}
-    .legal-section p, .legal-section ul {color:#333;margin-bottom:1rem;}
-    .legal-section ul {padding-left:2rem;}
-    .legal-section li {margin-bottom:0.5rem;}
-    @media (max-width:768px){.legal-page-container{padding:1rem;margin:1rem;} .legal-page-container h1{font-size:2rem;} .legal-section h2{font-size:1.25rem;}}
+    .legal-page-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      line-height: 1.8;
+    }
+
+    .legal-page-container h1 {
+      color: var(--verde, #4a7c59);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--verde, #4a7c59);
+      padding-bottom: 1rem;
+    }
+
+    .legal-section {
+      margin-bottom: 2rem;
+    }
+
+    .legal-section h2 {
+      color: var(--verde, #4a7c59);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-section p,
+    .legal-section ul {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+      padding-left: 2rem;
+    }
+
+    .legal-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width:768px) {
+      .legal-page-container {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .legal-page-container h1 {
+        font-size: 2rem;
+      }
+
+      .legal-section h2 {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header><div id="header"></div></header>
+  <header>
+    <div id="header"></div>
+  </header>
   <div class="legal-page-container">
     <h1>Aviso Legal</h1>
     <section class="legal-section">
       <h2>1. DATOS IDENTIFICATIVOS</h2>
-      <p>En cumplimiento del artículo 10 de la Ley 34/2002 (LSSI-CE), se informa a los usuarios:</p>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
+        Información y Comercio Electrónico (LSSI-CE), se informa a los usuarios de la página web que:</p>
       <ul>
-        <li><strong>Titular:</strong> Jardín de Jazmines [Razón social]</li>
-        <li><strong>NIF/CIF:</strong> [Número]</li>
+        <li><strong>Titular:</strong> Jardín de Jazmines</li>
+        <li><strong>NIF/CIF:</strong> [Número de identificación fiscal]</li>
         <li><strong>Domicilio social:</strong> [Dirección]</li>
-        <li><strong>Teléfono:</strong> [Teléfono]</li>
-        <li><strong>Email:</strong> [Correo]</li>
-        <li><strong>Registro Mercantil:</strong> [Datos inscripción]</li>
+        <li><strong>Teléfono:</strong> [Número de teléfono]</li>
+        <li><strong>Email:</strong> [Correo electrónico]</li>
+        <li><strong>Registro Mercantil:</strong> [Datos de inscripción en el Registro Mercantil]</li>
       </ul>
     </section>
     <section class="legal-section">
       <h2>2. OBJETO</h2>
-      <p>Este Aviso Legal regula el uso del sitio web. La navegación implica la aceptación plena y sin reservas de este texto.</p>
+      <p>El presente aviso legal regula el uso del sitio web www.jardindejazmines.es (en adelante, LA WEB), del que es
+        titular Jardín de Jazmines.</p>
+      <p>La navegación por la web de Jardín de Jazmines atribuye la condición de usuario del mismo e implica la
+        aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.</p>
     </section>
     <section class="legal-section">
       <h2>3. CONDICIONES DE USO</h2>
-      <p>El usuario se compromete a no emplear los contenidos para actividades ilícitas, difundir malware, ni dañar sistemas.</p>
+      <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que se ofrecen a través de LA
+        WEB y a no emplearlos para:</p>
       <ul>
-        <li>Actividades ilícitas o contrarias al orden público.</li>
-        <li>Difusión de contenidos racistas, xenófobos o ilegales.</li>
-        <li>Intentos de dañar sistemas físicos o lógicos.</li>
+        <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.</li>
+        <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del
+          terrorismo o atentatorio contra los derechos humanos.</li>
+        <li>Provocar daños en los sistemas físicos y lógicos de Jardín de Jazmines, de sus proveedores o de terceras
+          personas.</li>
+        <li>Introducir o difundir virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean
+          susceptibles de provocar los daños anteriormente mencionados.</li>
       </ul>
     </section>
     <section class="legal-section">
       <h2>4. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
-      <p>Todos los elementos del sitio (texto, imágenes, diseño) están protegidos. Queda prohibida la reproducción sin autorización escrita.</p>
+      <p>Jardín de Jazmines es titular de todos los derechos de propiedad intelectual e industrial de su página web, así
+        como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o
+        textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados,
+        programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.).</p>
+      <p>Todos los derechos reservados. En virtud de lo dispuesto en la Ley de Propiedad Intelectual, quedan
+        expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de
+        puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en
+        cualquier soporte y por cualquier medio técnico, sin la autorización de Jardín de Jazmines.</p>
     </section>
     <section class="legal-section">
-      <h2>5. EXCLUSIÓN DE GARANTÍAS</h2>
-      <p>No garantizamos ausencia total de errores ni continuidad absoluta del servicio.</p>
+      <h2>5. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</h2>
+      <p>Jardín de Jazmines no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza
+        que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del
+        portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado
+        todas las medidas tecnológicas necesarias para evitarlo.</p>
     </section>
     <section class="legal-section">
       <h2>6. MODIFICACIONES</h2>
-      <p>Nos reservamos el derecho de modificar contenidos o la estructura sin previo aviso.</p>
+      <p>Jardín de Jazmines se reserva el derecho de efectuar sin previo aviso las modificaciones que considere
+        oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a
+        través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
     </section>
     <section class="legal-section">
-      <h2>7. JURISDICCIÓN</h2>
-      <p>La relación se somete a la legislación española y tribunales de [Ciudad].</p>
+      <h2>7. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h2>
+      <p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las
+        actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente
+        las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso
+        los Juzgados y Tribunales de [Ciudad].</p>
     </section>
   </div>
 </body>
-<footer><div id="footer"></div></footer>
+<footer>
+  <div id="footer"></div>
+</footer>
+
 </html>

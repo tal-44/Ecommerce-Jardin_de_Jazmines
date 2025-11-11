@@ -12,10 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce - Jardín de Jazmines</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
     <!-- Incluir estilos del header/footer aquí para que los partials cargados por AJAX tengan estilos disponibles -->
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <!-- Iconos usados en los partials del header/footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -29,8 +29,8 @@
     -->
     <script>
         $(function () {
-            $("#header").load("./pages/header.html .header-container", function () { $.getScript("js/header.js") });
-            $("#footer").load("./pages/footer.html .footer-container", function () { $.getScript("js/footer.js") });
+            $("#header").load("/pages/header.html .header-container", function () { $.getScript("/js/header.js") });
+            $("#footer").load("/pages/footer.html .footer-container", function () { $.getScript("/js/footer.js") });
         });
     </script>
 </head>
@@ -58,8 +58,8 @@
             <h2 class="titulo-temporadas">Buscar por Temporada</h2>
             <div class="grid-temporadas">
                 <!-- Tarjeta PRIMAVERA -->
-                <a href="catalogo.html" class="tarjeta-temporada">
-                    <img src="img/temporadas/primavera.png" alt="Primavera">
+                <a href="/catalogo.php?temporada=primavera" class="tarjeta-temporada">
+                    <img src="/img/temporadas/primavera.png" alt="Primavera">
                     <div class="overlay-temporada">
                         <h3>Primavera</h3>
                         <p>Nuevos brotes y flores</p>
@@ -67,8 +67,8 @@
                 </a>
 
                 <!-- Tarjeta VERANO -->
-                <a href="catalogo.html" class="tarjeta-temporada">
-                    <img src="img/temporadas/verano.png" alt="Verano">
+                <a href="/catalogo.php?temporada=verano" class="tarjeta-temporada">
+                    <img src="/img/temporadas/verano.png" alt="Verano">
                     <div class="overlay-temporada">
                         <h3>Verano</h3>
                         <p>Plantas resistentes al calor</p>
@@ -76,8 +76,8 @@
                 </a>
 
                 <!-- Tarjeta OTOÑO -->
-                <a href="catalogo.html" class="tarjeta-temporada">
-                    <img src="img/temporadas/otono.png" alt="Otoño">
+                <a href="/catalogo.php?temporada=otoño" class="tarjeta-temporada">
+                    <img src="/img/temporadas/otono.png" alt="Otoño">
                     <div class="overlay-temporada">
                         <h3>Otoño</h3>
                         <p>Tonos cálidos y acogedores</p>
@@ -85,8 +85,8 @@
                 </a>
 
                 <!-- Tarjeta INVIERNO -->
-                <a href="catalogo.html" class="tarjeta-temporada">
-                    <img src="img/temporadas/invierno.png" alt="Invierno">
+                <a href="/catalogo.php?temporada=invierno" class="tarjeta-temporada">
+                    <img src="/img/temporadas/invierno.png" alt="Invierno">
                     <div class="overlay-temporada">
                         <h3>Invierno</h3>
                         <p>Plantas de interior resistentes</p>
@@ -117,7 +117,7 @@
 
             <div class="equipo-grid">
                 <article class="miembro">
-                    <img src="img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
+                    <img src="/img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
                     <!-- no se para que era la imagen de default, pero asi por lo emnos se ve algo -->
                     <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
                     <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir
@@ -127,7 +127,7 @@
                 </article>
 
                 <article class="miembro">
-                    <img src="img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
+                    <img src="/img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
                     <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
                     <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
                     <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
@@ -135,7 +135,7 @@
                 </article>
 
                 <article class="miembro">
-                    <img src="img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
+                    <img src="/img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
                     <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
                     <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
                     <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"

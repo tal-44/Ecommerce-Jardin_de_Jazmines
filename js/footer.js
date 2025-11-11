@@ -21,7 +21,7 @@ function initFooter() {
 
     // Registro
     const botonRegistro = document.getElementById("registerBtn");
-    if (botonRegistro) botonRegistro.addEventListener("click", function() { temp(); });
+    if (botonRegistro) botonRegistro.addEventListener("click", function () { temp(); });
 
     // Búsqueda local
     const botonBuscar = document.getElementById("searchBtn");
@@ -49,18 +49,18 @@ function initFooter() {
         });
     }
 
-    // Enlaces internos del footer que apuntan a {temp.html}
-    const enlacesFooter = document.querySelectorAll(".footer-link");
-    enlacesFooter.forEach(function(enlace) {
+    // Enlaces internos que apuntan a temp.html
+    const enlacesFooter = document.querySelectorAll('.footer-link');
+    enlacesFooter.forEach(function (enlace) {
         const href = enlace.getAttribute("href");
         if (href && href.includes("temp.html")) {
             // revisar: basarse en 'includes' es frágil si cambian rutas; preferir clase o data-attribute
-            enlace.addEventListener("click", function(e) { temp(); });
+            enlace.addEventListener("click", function (e) { temp(); });
         }
     });
 }
 
-// Inicializar cuando el DOM esté listo; si ya lo está, ejecutar tras el siguiente tick.
+// Inicializar cuando DOM listo
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initFooter);
 } else {

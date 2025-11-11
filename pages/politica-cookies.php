@@ -1,11 +1,42 @@
 <?php
-$page_title = "Política de Cookies - Jardín de Jazmines";
-include '../includes/header.php';
+// ============================================================
+// SISTEMA DE FALLBACK A HTML
+// ============================================================
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /pages/politica-cookies.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/pages/politica-cookies.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
+
+try {
+    $page_title = "Política de Cookies - Jardín de Jazmines";
+
+    if (!file_exists('../includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include '../includes/header.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/politica-cookies.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/politica-cookies.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <div class="legal-page-container">
     <h1>Política de Cookies</h1>
-    
+
     <section class="legal-section">
         <h2>1. ¿QUÉ SON LAS COOKIES?</h2>
         <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet o móvil) cuando visita una página web. Las cookies permiten que la web reconozca su dispositivo y almacene cierta información sobre sus preferencias o acciones pasadas.</p>
@@ -13,7 +44,7 @@ include '../includes/header.php';
 
     <section class="legal-section">
         <h2>2. ¿QUÉ TIPOS DE COOKIES UTILIZAMOS?</h2>
-        
+
         <h3>Según su finalidad:</h3>
         <ul>
             <li><strong>Cookies técnicas:</strong> Permiten la navegación y el uso de las diferentes opciones de la web (controlar el tráfico, identificar la sesión, acceder a partes de acceso restringido, etc.). Son necesarias para el funcionamiento de la web.</li>
@@ -117,99 +148,120 @@ include '../includes/header.php';
 </div>
 
 <style>
-.legal-page-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    line-height: 1.8;
-}
-
-.legal-page-container h1 {
-    color: var(--verde, #4a7c59);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--verde, #4a7c59);
-    padding-bottom: 1rem;
-}
-
-.legal-section {
-    margin-bottom: 2rem;
-}
-
-.legal-section h2 {
-    color: var(--verde, #4a7c59);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.legal-section h3 {
-    color: #333;
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem 0;
-}
-
-.legal-section p, .legal-section ul {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.legal-section ul {
-    padding-left: 2rem;
-}
-
-.legal-section li {
-    margin-bottom: 0.5rem;
-}
-
-.cookies-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-}
-
-.cookies-table th, .cookies-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.cookies-table th {
-    background-color: var(--verde, #4a7c59);
-    color: white;
-    font-weight: 600;
-}
-
-.cookies-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.cookies-table tr:hover {
-    background-color: #f5f5f5;
-}
-
-@media (max-width: 768px) {
     .legal-page-container {
-        padding: 1rem;
-        margin: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        line-height: 1.8;
     }
-    
+
     .legal-page-container h1 {
-        font-size: 2rem;
+        color: var(--verde, #4a7c59);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--verde, #4a7c59);
+        padding-bottom: 1rem;
     }
-    
+
+    .legal-section {
+        margin-bottom: 2rem;
+    }
+
     .legal-section h2 {
-        font-size: 1.25rem;
+        color: var(--verde, #4a7c59);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
-    
+
+    .legal-section h3 {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    .legal-section p,
+    .legal-section ul {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+        padding-left: 2rem;
+    }
+
+    .legal-section li {
+        margin-bottom: 0.5rem;
+    }
+
     .cookies-table {
-        font-size: 0.85rem;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
     }
-    
-    .cookies-table th, .cookies-table td {
-        padding: 8px;
+
+    .cookies-table th,
+    .cookies-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
     }
-}
+
+    .cookies-table th {
+        background-color: var(--verde, #4a7c59);
+        color: white;
+        font-weight: 600;
+    }
+
+    .cookies-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .cookies-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page-container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .legal-page-container h1 {
+            font-size: 2rem;
+        }
+
+        .legal-section h2 {
+            font-size: 1.25rem;
+        }
+
+        .cookies-table {
+            font-size: 0.85rem;
+        }
+
+        .cookies-table th,
+        .cookies-table td {
+            padding: 8px;
+        }
+    }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+<?php
+try {
+    if (!file_exists('../includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
+
+    include '../includes/footer.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/politica-cookies.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/politica-cookies.html";</script>';
+        exit;
+    }
+}
+
+restore_error_handler();
+?>

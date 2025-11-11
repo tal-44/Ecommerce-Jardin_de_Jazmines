@@ -6,8 +6,8 @@
 <footer class="footer-container">
     <div class="footer-left">
         <div class="logo-section">
-            <a href="index.php" class="logo">
-                <img src="img/logo.png" alt="Logo">
+            <a href="/index.php" class="logo">
+                <img src="/img/logo.png" alt="Logo">
             </a>
         </div>
 
@@ -50,11 +50,11 @@
             <div class="links-column">
                 <h3>Legal</h3>
                 <ul class="links-list">
-                    <li><a href="pages/aviso-legal.php" class="footer-link">Aviso Legal</a></li>
-                    <li><a href="pages/politica-privacidad.php" class="footer-link">Política de Privacidad</a></li>
-                    <li><a href="pages/politica-cookies.php" class="footer-link">Política de Cookies</a></li>
-                    <li><a href="pages/condiciones-venta.php" class="footer-link">Condiciones de Venta</a></li>
-                    <li><a href="pages/derecho-desistimiento.php" class="footer-link">Derecho de Desistimiento</a></li>
+                    <li><a href="/pages/aviso-legal.php" class="footer-link">Aviso Legal</a></li>
+                    <li><a href="/pages/politica-privacidad.php" class="footer-link">Política de Privacidad</a></li>
+                    <li><a href="/pages/politica-cookies.php" class="footer-link">Política de Cookies</a></li>
+                    <li><a href="/pages/condiciones-venta.php" class="footer-link">Condiciones de Venta</a></li>
+                    <li><a href="/pages/derecho-desistimiento.php" class="footer-link">Derecho de Desistimiento</a></li>
                 </ul>
             </div>
         </div>
@@ -72,8 +72,8 @@
 </div>
 
 <!-- Scripts JavaScript -->
-<script src="js/header.js"></script>
-<script src="js/footer.js"></script>
+<script src="/interfacesWeb1/js/header.js"></script>
+<script src="/interfacesWeb1/js/footer.js"></script>
 
 <!-- JS específico de cada página -->
 <?php if (isset($js_adicional)) echo $js_adicional; ?>

@@ -1,15 +1,46 @@
 <?php
-$page_title = "Política de Privacidad - Jardín de Jazmines";
-include '../includes/header.php';
+// ============================================================
+// SISTEMA DE FALLBACK A HTML
+// ============================================================
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /pages/politica-privacidad.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/pages/politica-privacidad.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
+
+try {
+    $page_title = "Política de Privacidad - Jardín de Jazmines";
+
+    if (!file_exists('../includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include '../includes/header.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/politica-privacidad.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/politica-privacidad.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <div class="legal-page-container">
     <h1>Política de Privacidad</h1>
-    
+
     <section class="legal-section">
         <h2>1. INFORMACIÓN AL USUARIO</h2>
         <p>Jardín de Jazmines, como Responsable del Tratamiento, le informa que, según lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril (RGPD), y en la L.O. 3/2018, de 5 de diciembre, de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD), trataremos su datos tal y como reflejamos en la presente Política de Privacidad.</p>
-        
+
         <h3>Responsable del tratamiento:</h3>
         <ul>
             <li><strong>Identidad:</strong> Jardín de Jazmines - [NIF/CIF]</li>
@@ -99,65 +130,84 @@ include '../includes/header.php';
 </div>
 
 <style>
-.legal-page-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    line-height: 1.8;
-}
-
-.legal-page-container h1 {
-    color: var(--verde, #4a7c59);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--verde, #4a7c59);
-    padding-bottom: 1rem;
-}
-
-.legal-section {
-    margin-bottom: 2rem;
-}
-
-.legal-section h2 {
-    color: var(--verde, #4a7c59);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.legal-section h3 {
-    color: #333;
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem 0;
-}
-
-.legal-section p, .legal-section ul {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.legal-section ul {
-    padding-left: 2rem;
-}
-
-.legal-section li {
-    margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
     .legal-page-container {
-        padding: 1rem;
-        margin: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        line-height: 1.8;
     }
-    
+
     .legal-page-container h1 {
-        font-size: 2rem;
+        color: var(--verde, #4a7c59);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--verde, #4a7c59);
+        padding-bottom: 1rem;
     }
-    
+
+    .legal-section {
+        margin-bottom: 2rem;
+    }
+
     .legal-section h2 {
-        font-size: 1.25rem;
+        color: var(--verde, #4a7c59);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
-}
+
+    .legal-section h3 {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    .legal-section p,
+    .legal-section ul {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+        padding-left: 2rem;
+    }
+
+    .legal-section li {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page-container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .legal-page-container h1 {
+            font-size: 2rem;
+        }
+
+        .legal-section h2 {
+            font-size: 1.25rem;
+        }
+    }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+<?php
+try {
+    if (!file_exists('../includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
+
+    include '../includes/footer.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/politica-privacidad.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/politica-privacidad.html";</script>';
+        exit;
+    }
+}
+
+restore_error_handler();
+?>

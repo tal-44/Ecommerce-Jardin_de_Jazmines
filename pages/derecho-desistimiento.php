@@ -1,11 +1,42 @@
 <?php
-$page_title = "Derecho de Desistimiento - Jardín de Jazmines";
-include '../includes/header.php';
+// ============================================================
+// SISTEMA DE FALLBACK A HTML
+// ============================================================
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /pages/derecho-desistimiento.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/pages/derecho-desistimiento.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
+
+try {
+    $page_title = "Derecho de Desistimiento - Jardín de Jazmines";
+
+    if (!file_exists('../includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include '../includes/header.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/derecho-desistimiento.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/derecho-desistimiento.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <div class="legal-page-container">
     <h1>Derecho de Desistimiento</h1>
-    
+
     <section class="legal-section">
         <h2>1. DERECHO DE DESISTIMIENTO</h2>
         <p>De conformidad con lo establecido en la Ley General para la Defensa de los Consumidores y Usuarios (Real Decreto Legislativo 1/2007), el cliente tiene derecho a desistir del contrato en un plazo de 14 días naturales sin necesidad de justificación.</p>
@@ -67,13 +98,13 @@ include '../includes/header.php';
         <h2>7. DEVOLUCIÓN DE LOS PRODUCTOS</h2>
         <p>Deberá devolvernos o entregarnos los productos, sin ninguna demora indebida y, en cualquier caso, a más tardar en el plazo de 14 días naturales a partir de la fecha en que nos comunique su decisión de desistimiento.</p>
         <p>Se cumplirá el plazo si efectúa la devolución de los bienes antes de que haya concluido el plazo de 14 días.</p>
-        
+
         <h3>Gastos de devolución:</h3>
         <ul>
             <li>Los gastos directos de devolución correrán a su cargo.</li>
             <li>Solo será usted responsable de la disminución de valor de los bienes resultante de una manipulación distinta a la necesaria para establecer la naturaleza, las características y el funcionamiento de los bienes.</li>
         </ul>
-        
+
         <h3>Estado de los productos:</h3>
         <p>Los productos deben devolverse:</p>
         <ul>
@@ -91,8 +122,8 @@ include '../includes/header.php';
             <br>
             <p>A la atención de Jardín de Jazmines:</p>
             <p>[Dirección]<br>
-            [Email]<br>
-            [Teléfono]</p>
+                [Email]<br>
+                [Teléfono]</p>
             <br>
             <p>Por la presente le comunico/comunicamos (*) que desisto/desistimos (*) de mi/nuestro (*) contrato de venta del siguiente bien/servicio (*):</p>
             <p>_________________________________________________________________</p>
@@ -129,84 +160,103 @@ include '../includes/header.php';
 </div>
 
 <style>
-.legal-page-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    line-height: 1.8;
-}
-
-.legal-page-container h1 {
-    color: var(--verde, #4a7c59);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 3px solid var(--verde, #4a7c59);
-    padding-bottom: 1rem;
-}
-
-.legal-section {
-    margin-bottom: 2rem;
-}
-
-.legal-section h2 {
-    color: var(--verde, #4a7c59);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.legal-section h3 {
-    color: #333;
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem 0;
-}
-
-.legal-section p, .legal-section ul {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.legal-section ul {
-    padding-left: 2rem;
-}
-
-.legal-section li {
-    margin-bottom: 0.5rem;
-}
-
-.form-model {
-    background-color: #f9f9f9;
-    border: 2px solid var(--verde, #4a7c59);
-    border-radius: 8px;
-    padding: 2rem;
-    margin: 1.5rem 0;
-    font-family: 'Courier New', monospace;
-}
-
-.form-model p {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
     .legal-page-container {
-        padding: 1rem;
-        margin: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        line-height: 1.8;
     }
-    
+
     .legal-page-container h1 {
-        font-size: 2rem;
+        color: var(--verde, #4a7c59);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--verde, #4a7c59);
+        padding-bottom: 1rem;
     }
-    
+
+    .legal-section {
+        margin-bottom: 2rem;
+    }
+
     .legal-section h2 {
-        font-size: 1.25rem;
+        color: var(--verde, #4a7c59);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
-    
+
+    .legal-section h3 {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    .legal-section p,
+    .legal-section ul {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+        padding-left: 2rem;
+    }
+
+    .legal-section li {
+        margin-bottom: 0.5rem;
+    }
+
     .form-model {
-        padding: 1rem;
-        font-size: 0.9rem;
+        background-color: #f9f9f9;
+        border: 2px solid var(--verde, #4a7c59);
+        border-radius: 8px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        font-family: 'Courier New', monospace;
     }
-}
+
+    .form-model p {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page-container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .legal-page-container h1 {
+            font-size: 2rem;
+        }
+
+        .legal-section h2 {
+            font-size: 1.25rem;
+        }
+
+        .form-model {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+<?php
+try {
+    if (!file_exists('../includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
+
+    include '../includes/footer.php';
+} catch (Exception $e) {
+    if (!headers_sent()) {
+        header("Location: /pages/derecho-desistimiento.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/pages/derecho-desistimiento.html";</script>';
+        exit;
+    }
+}
+
+restore_error_handler();
+?>

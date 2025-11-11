@@ -23,28 +23,26 @@
             </div>
         </div>
 
-        <!-- Header principal -->
         <header class="main-header">
             <div class="header-left">
-                <a href="../index.html" class="logo">
+                <a href="../index.php" class="logo">
                     <img src="../img/logo.png" alt="Logo" class="logo-icon"
                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'50\' height=\'50\'%3E%3Ccircle cx=\'25\' cy=\'25\' r=\'25\' fill=\'%234a7c59\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'white\' font-size=\'20\' font-weight=\'bold\'%3EP%3C/text%3E%3C/svg%3E'; this.alt='Logo (pendiente)';">
                 </a>
-                <span class="site-title">Nombre de la empresa (pendiente)</span>
+                <span class="site-title"></span>
             </div>
 
             <nav class="header-center">
-                <a href="../index.html" class="nav-button">Inicio</a>
-                <a href="../catalogo.html" class="nav-button">Plantas</a>
-                <a href="../catalogo.html?tipo=herramientas" class="nav-button">Herramientas</a>
-                <a href="../catalogo.html?tipo=ramos" class="nav-button">Ramos</a>
+                <a href="../index.php" class="nav-button">Inicio</a>
+                <a href="../catalogo.php" class="nav-button">Plantas</a>
+                <a href="../catalogo.php?tipo=herramientas" class="nav-button">Herramientas</a>
+                <a href="../catalogo.php?tipo=ramos" class="nav-button">Ramos</a>
             </nav>
 
             <div class="header-right">
-                <button class="icon-button" title="Carrito de compras"
-                    onclick="alert('Funcionalidad aún no implementada')" aria-label="Ver carrito de compras">
+                <button class="icon-button" title="Carrito de compras" onclick="window.location.href='#'" aria-label="Ver carrito de compras" aria-disabled="true">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="note-small">(Funcionalidad aún no implementada)</span>
+                    <span class="note-small" style="font-size:0.75rem; margin-left:6px; color:#6c757d;"></span>
                 </button>
 
                 <div class="user-menu">
@@ -54,11 +52,11 @@
                     <div class="user-dropdown" id="userDropdown">
                         <a href="#" class="dropdown-item"
                             onclick="alert('Funcionalidad aún no implementada'); return false;">
-                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión (aún no implementado)
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
                         </a>
                         <a href="#" class="dropdown-item"
                             onclick="alert('Funcionalidad aún no implementada'); return false;">
-                            <i class="fas fa-user-plus"></i> Registrarse (aún no implementado)
+                            <i class="fas fa-user-plus"></i> Registrarse
                         </a>
                     </div>
                 </div>

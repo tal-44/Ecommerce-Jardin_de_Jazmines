@@ -1,17 +1,58 @@
 <?php
-require_once 'config/conexion.php';
+// Sistema de fallback a HTML
+// Si PHP falla, redirige a catalogo.html
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        if (!headers_sent()) {
+            header("Location: /catalogo.html");
+            exit;
+        } else {
+            echo '<script>window.location.href="/catalogo.html";</script>';
+            exit;
+        }
+    }
+    return false;
+});
 
-// Obtener parámetros de filtro
-$temporada = isset($_GET['temporada']) ? $_GET['temporada'] : null;
-$categoria_id = isset($_GET['categoria']) ? (int)$_GET['categoria'] : null;
-$tipo = isset($_GET['tipo']) ? $_GET['tipo'] : 'plantas'; // 'plantas' o 'ramos'
+try {
+    // Verificar archivo de conexión
+    if (!file_exists('config/conexion.php')) {
+        throw new Exception("Archivo de conexión no encontrado");
+    }
 
-// Variables para header
-$titulo_pagina = ($tipo === 'ramos') ? "Catálogo de Ramos" : "Catálogo de Plantas";
-$css_adicional = '<link rel="stylesheet" href="css/catalogo.css">';
-$js_adicional = '<script src="js/catalogo.js"></script>';
+    require_once 'config/conexion.php';
 
-include 'includes/header.php';
+    // Verificar que la conexión se estableció
+    if (!isset($conn) || $conn->connect_error) {
+        throw new Exception("Error de conexión a base de datos");
+    }
+
+    // Obtener parámetros de filtro
+    $temporada = isset($_GET['temporada']) ? $_GET['temporada'] : null;
+    $categoria_id = isset($_GET['categoria']) ? (int)$_GET['categoria'] : null;
+    $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : 'plantas'; // 'plantas' o 'ramos'
+
+    // Variables para header
+    $titulo_pagina = ($tipo === 'ramos') ? "Catálogo de Ramos" : "Catálogo de Plantas";
+    $css_adicional = '<link rel="stylesheet" href="/css/catalogo.css">';
+    $js_adicional = '<script src="/js/catalogo.js"></script>';
+
+    // Verificar archivo header
+    if (!file_exists('includes/header.php')) {
+        throw new Exception("Header no encontrado");
+    }
+
+    include 'includes/header.php';
+} catch (Exception $e) {
+    // Si hay cualquier error, redirigir a la versión HTML
+    if (!headers_sent()) {
+        header("Location: /catalogo.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/catalogo.html";</script>';
+        exit;
+    }
+}
 ?>
 
 <section class="catalogo-section">
@@ -324,4 +365,25 @@ include 'includes/header.php';
     </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php
+try {
+    // Verificar archivo footer
+    if (!file_exists('includes/footer.php')) {
+        throw new Exception("Footer no encontrado");
+    }
+
+    include 'includes/footer.php';
+} catch (Exception $e) {
+    // Si falla el footer, redirigir a HTML
+    if (!headers_sent()) {
+        header("Location: /catalogo.html");
+        exit;
+    } else {
+        echo '<script>window.location.href="/catalogo.html";</script>';
+        exit;
+    }
+}
+
+// Restaurar error handler original
+restore_error_handler();
+?>
