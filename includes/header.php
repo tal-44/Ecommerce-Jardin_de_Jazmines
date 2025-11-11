@@ -18,6 +18,9 @@
 
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fuente Lexend para accesibilidad (dislexia) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -54,6 +57,11 @@
                         <span class="cart-badge"><?php echo count($_SESSION['carrito']); ?></span>
                     <?php endif; ?>
                     <span class="note-small" style="font-size:0.75rem; margin-left:6px; color:#6c757d;">(Funcionalidad aún no implementada)</span>
+                </button>
+
+                <!-- Botón modo dislexia -->
+                <button class="icon-button" id="btnDyslexic" title="Modo lectura fácil" aria-label="Activar modo lectura fácil">
+                    <i class="fas fa-font"></i>
                 </button>
 
                 <!-- Menú de usuario: los IDs #btnUserMenu y #userDropdown son usados por el JS. -->

@@ -24,7 +24,7 @@
         <div class="search-section">
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Buscar..." class="search-input">
-                <button class="search-btn" id="searchBtn">
+                <button class="search-btn" id="searchBtn" title="Buscar" aria-label="Buscar">
                     <i class="fas fa-search"></i>
                 </button>
             </div>

@@ -14,6 +14,9 @@
     <title>Header - Jardín de Jazmines</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fuente Lexend para accesibilidad (dislexia) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +24,7 @@
 
         <div class="promo-bar">
             <div class="promo-text">
-                MEGA Oferta Gigante Especial!! Compra 2 ramos y llevate uno!!
+                🌿 ¡Envío gratis en compras superiores a 50€! 🌿 Descubre nuestras plantas de temporada 🌿
             </div>
         </div>
 
@@ -46,12 +49,17 @@
                     <i class="fas fa-shopping-cart"></i>
                 </button>
 
+                <!-- Botón modo dislexia -->
+                <button class="icon-button" id="btnDyslexic" title="Modo lectura fácil" aria-label="Activar modo lectura fácil">
+                    <i class="fas fa-font"></i>
+                </button>
+
                 <div class="user-menu">
                     <button class="icon-button" id="btnUserMenu" aria-expanded="false" title="Menú de usuario">
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="user-dropdown" id="userDropdown" role="region" aria-labelledby="btnUserMenu">
-                        <a href="#" class="dropdown-item"> <!-- redirigir corxmrectamente -->
+                        <a href="#" class="dropdown-item">
                             <i class="fas fa-user-circle"></i> Mi Perfil
                         </a>
                         <a href="#" class="dropdown-item"> <!-- redirigir correctamente -->

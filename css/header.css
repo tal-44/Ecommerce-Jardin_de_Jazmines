@@ -8,14 +8,14 @@
 */
 
 :root {
-        /* revisar: estas variables también existen en footer.css; considerar unificar en un archivo global */
-        --verde: #4a7c59;
-        --verde-claro: #a4c3b2;
-        --gris: #6c757d;
-        --gris-claro: #e9ecef;
-        --blanco: #ffffff;
-        --sombra: 0 2px 4px rgba(0,0,0,0.1);
-        --transicion: all 0.3s ease;
+    /* revisar: estas variables también existen en footer.css; considerar unificar en un archivo global */
+    --verde: #4a7c59;
+    --verde-claro: #a4c3b2;
+    --gris: #6c757d;
+    --gris-claro: #e9ecef;
+    --blanco: #ffffff;
+    --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
 }
 
 /* Reset CSS básico (AGREGADO PARA SOLUCIONAR MÁRGENES) */
@@ -36,6 +36,7 @@ body {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -47,6 +48,7 @@ body {
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -202,8 +204,8 @@ body {
 
 .nav-button:focus,
 .icon-button:focus {
-  outline: 2px solid var(--verde);
-  outline-offset: 2px;
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
 }
 
 /* ========================================
@@ -266,21 +268,59 @@ body {
 }
 
 .header-container {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--blanco);
-  box-shadow: var(--sombra);
-  animation: aparecer 0.6s ease-out;
-  will-change: transform;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    animation: aparecer 0.6s ease-out;
+    will-change: transform;
 }
 
 .promo-text {
-  will-change: transform;
+    will-change: transform;
 }
 
 .note-small {
     font-size: 0.75rem;
     margin-left: 6px;
     color: var(--gris);
+}
+
+/* ========================================
+   MODO DISLEXIA / LECTURA F�CIL
+   ======================================== */
+
+.icon-button.active {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+body.dyslexic-mode {
+    font-family: 'Lexend', Arial, sans-serif !important;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    word-spacing: 0.16em;
+}
+
+body.dyslexic-mode * {
+    font-family: 'Lexend', Arial, sans-serif !important;
+}
+
+body.dyslexic-mode h1,
+body.dyslexic-mode h2,
+body.dyslexic-mode h3,
+body.dyslexic-mode h4 {
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+body.dyslexic-mode p,
+body.dyslexic-mode li {
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+body.dyslexic-mode .nav-button {
+    font-weight: 500;
 }
