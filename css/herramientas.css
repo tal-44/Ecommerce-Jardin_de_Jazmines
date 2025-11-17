@@ -1,0 +1,259 @@
+/*
+ * Variables por defecto
+ *
+ * Copia de las variables globales utilizadas en la plantilla.
+ * Añadir este bloque garantiza que la página de herramientas se vea
+ * correctamente incluso si no se carga index.css. Si ya tienes un
+ * archivo global con estas variables, puedes eliminar este bloque.
+ */
+:root {
+    --color-surface: #f8f9fa;
+    --color-border: #e5e7eb;
+    --color-primary: #2f6b44;
+    --color-text-secondary: #6b7280;
+    --color-white: #ffffff;
+    --font-weight-semibold: 600;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --space-6: 0.375rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --duration-normal: 0.3s;
+    --ease-standard: ease;
+    --container-lg: 1200px;
+    --line-height-normal: 1.5;
+    --letter-spacing-tight: 0.02em;
+}
+/*
+ * Estilos para la vista de herramientas (herramientas.php)
+ *
+ * Este archivo define un diseño de dos columnas con un panel de filtros
+ * a la izquierda y un grid de tarjetas a la derecha. Se busca la
+ * armonía con el resto de la tienda mediante el uso de la paleta de
+ * colores y formas redondeadas.
+ */
+
+/* Encabezado de la sección */
+.seccion-catalogo-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--color-surface);
+}
+
+.seccion-catalogo-header h1 {
+    font-size: 2.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.seccion-catalogo-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Contenedor principal */
+.seccion-catalogo {
+    background-color: var(--color-white);
+    padding: 2rem;
+}
+
+.catalogo-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Panel de filtros */
+.filtros-panel {
+    width: 220px;
+    border-right: 1px solid var(--color-border);
+    padding-right: 1rem;
+}
+
+.filtros-panel h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.filtros-panel .filtro-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.filtros-panel .filtro-grupo h4 {
+    font-size: 1rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.filtro-lista {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.filtro-lista li {
+    margin-bottom: 0.5rem;
+}
+
+.filtro-lista a {
+    text-decoration: none;
+    color: #4b5563;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.filtro-lista a.activo,
+.filtro-lista a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Contenido (grid de herramientas) */
+.catalogo-contenido {
+    flex: 1;
+}
+
+.grid-herramientas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta de herramienta */
+.tarjeta-herramienta {
+    background: #f7f9f8;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-herramienta:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.herramienta-imagen {
+    position: relative;
+}
+
+.herramienta-imagen img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Badge de tipo (categoría de herramienta) */
+.tipo-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    text-transform: capitalize;
+    z-index: 1;
+}
+
+.herramienta-contenido {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.herramienta-contenido h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+    color: #1f2937;
+}
+
+.descripcion {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin: 0 0 0.5rem;
+}
+
+.herramienta-info span.material {
+    font-size: 0.8rem;
+    color: #4b5563;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stock {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.sin-stock {
+    color: #d32f2f;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.herramienta-botones {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-detalle {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-carrito {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-deshabilitado {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+}

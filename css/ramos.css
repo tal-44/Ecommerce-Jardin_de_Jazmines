@@ -1,0 +1,218 @@
+/*
+ * Variables por defecto
+ *
+ * Estas definiciones garantizan que las variables CSS utilizadas en
+ * este archivo estén definidas aunque index.css no esté cargado en
+ * esta página. Si ya tienes las variables definidas globalmente en
+ * otra hoja de estilos, puedes eliminar este bloque.
+ */
+:root {
+    --color-surface: #f8f9fa;
+    --color-border: #e5e7eb;
+    --color-primary: #2f6b44;
+    --color-text-secondary: #6b7280;
+    --color-white: #ffffff;
+    --font-weight-semibold: 600;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --space-6: 0.375rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --duration-normal: 0.3s;
+    --ease-standard: ease;
+    --container-lg: 1200px;
+    --line-height-normal: 1.5;
+    --letter-spacing-tight: 0.02em;
+}
+/*
+ * Estilos para la vista de ramos (ramos.php)
+ *
+ * Este archivo se inspira en el diseño de las tarjetas de temporada del
+ * index y utiliza colores y proporciones similares para que la página de
+ * ramos se integre con el resto del sitio. Ajusta los valores a tu
+ * gusto si necesitas cambios de estilo.
+ */
+
+/* Contenedor principal de la sección de ramos */
+.ramos-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Encabezado (título y descripción) */
+.ramos-encabezado h1 {
+    font-size: 2.25rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.ramos-encabezado p {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Grid de tarjetas de ramos */
+.ramos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjeta individual */
+.ramo-tarjeta {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sutil efecto al pasar el ratón */
+.ramo-tarjeta:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la planta dentro de la tarjeta */
+.ramo-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.ramo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Escalar imagen en hover */
+.ramo-tarjeta:hover .ramo-imagen img {
+    transform: scale(1.1);
+}
+
+/* Badge de temporada en la esquina superior izquierda */
+.badge-temporada {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+/* Contenido textual de la tarjeta */
+.ramo-contenido {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.ramo-contenido h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+    color: #1f2937;
+}
+
+.ramo-contenido p.nombre-cientifico {
+    margin: 0 0 0.5rem;
+    font-style: italic;
+    color: #5c6b64;
+    font-size: 0.9rem;
+}
+
+.stock-info {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+}
+
+.stock-info .en-stock {
+    color: var(--color-primary);
+}
+
+.stock-info .agotado {
+    color: #d32f2f;
+}
+
+/* Cuidados (riego, dificultad) */
+.cuidados-ramo {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+/* Precio */
+.ramo-precio {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+/* Acciones: contenedor de botones */
+.ramo-acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Botón genérico */
+.boton {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+/* Botón de detalle */
+.boton-detalle {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Botón de agregar al carrito */
+.boton-carrito {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+}
+
+/* Botón deshabilitado */
+.boton-deshabilitado {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+}

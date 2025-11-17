@@ -1,197 +1,159 @@
 <?php
-// ============================================================
-// SISTEMA DE FALLBACK A HTML
-// ============================================================
-// Si PHP no puede ejecutarse correctamente, redirigir a index.html
-set_error_handler(function ($errno, $errstr, $errfile, $errline) {
-    if (error_reporting() & $errno) {
-        if (!headers_sent()) {
-            header("Location: /index.html");
-            exit;
-        } else {
-            echo '<script>window.location.href="/index.html";</script>';
-            exit;
-        }
-    }
-    return false;
-});
+// (mantén tu conexión a la base de datos aquí si tienes)
 
-try {
-    // ============================================================
-    // 1. INCLUIR CONEXIÓN A BD
-    // ============================================================
-    if (!file_exists('config/conexion.php')) {
-        throw new Exception("Archivo de conexión no encontrado");
-    }
-
-    require_once 'config/conexion.php';
-
-    // Verificar que la conexión se estableció
-    if (!isset($conn) || $conn->connect_error) {
-        throw new Exception("Error de conexión a base de datos");
-    }
-
-    // ============================================================
-    // 2. VARIABLES PARA HEADER
-    // ============================================================
-    $titulo_pagina = "Inicio - Tienda de Plantas";
-    $css_adicional = '<link rel="stylesheet" href="/css/index.css">';
-    $js_adicional = '<script src="/js/index.js"></script>';
-
-    // ============================================================
-    // 3. INCLUIR HEADER
-    // ============================================================
-    if (!file_exists('includes/header.php')) {
-        throw new Exception("Header no encontrado");
-    }
-
-    include 'includes/header.php';
-} catch (Exception $e) {
-    // Si hay cualquier error, redirigir a la versión HTML
-    if (!headers_sent()) {
-        header("Location: /index.html");
-        exit;
-    } else {
-        echo '<script>window.location.href="/index.html";</script>';
-        exit;
-    }
-}
+$css_adicional = 'css/index.css';
+$js_adicional = '';
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín de Jazmines</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="<?php echo $css_adicional; ?>">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <?php include 'includes/header.php'; ?>
 
-<!-- ============================================================
-     4. CONTENIDO DE LA PÁGINA
-     ============================================================ -->
+    <!-- SECCIÓN BUSCADOR -->
+    <section class="seccion-buscador">
+        <div class="buscador-contenido">
+            <form class="search-wrapper" method="GET" action="catalogo.php">
+                <input type="text" placeholder="Buscar plantas..." name="q" required>
+                <button type="submit" class="search-btn">🔍</button>
+            </form>
+        </div>
+    </section>
 
-<!-- TU SECCIÓN DE BUSCADOR ACTUAL (mantén tu HTML) -->
-<section class="seccion-buscador">
-    <div class="buscador-contenido">
-        <form action="buscar.php" method="GET" class="formulario-busqueda">
-            <div class="search-wrapper">
-                <input type="text" name="q" placeholder="Busca tu planta ideal..." required>
-                <button type="submit" class="search-btn" aria-label="Buscar">
-                    <i class="fas fa-search"></i>
-                </button>
+    <!-- SECCIÓN TEMPORADAS -->
+    <section class="seccion-temporadas">
+        <div class="container-temporadas">
+            <h2 class="titulo-temporadas">Buscar por Temporada</h2>
+            <div class="grid-temporadas">
+                <a href="catalogo.php?temporada=primavera" class="tarjeta-temporada">
+                    <img src="img/temporadas/primavera.png" alt="Primavera" onerror="this.src='img/placeholder.jpg'">
+                    <div class="overlay-temporada">
+                        <h3>Primavera</h3>
+                        <p>Nuevos brotes y flores</p>
+                    </div>
+                </a>
+                <a href="catalogo.php?temporada=verano" class="tarjeta-temporada">
+                    <img src="img/temporadas/verano.png" alt="Verano" onerror="this.src='img/placeholder.jpg'">
+                    <div class="overlay-temporada">
+                        <h3>Verano</h3>
+                        <p>Plantas resistentes al calor</p>
+                    </div>
+                </a>
+                <a href="catalogo.php?temporada=otono" class="tarjeta-temporada">
+                    <img src="img/temporadas/otono.png" alt="Otoño" onerror="this.src='img/placeholder.jpg'">
+                    <div class="overlay-temporada">
+                        <h3>Otoño</h3>
+                        <p>Tonos cálidos y acogedores</p>
+                    </div>
+                </a>
+                <a href="catalogo.php?temporada=invierno" class="tarjeta-temporada">
+                    <img src="img/temporadas/invierno.png" alt="Invierno" onerror="this.src='img/placeholder.jpg'">
+                    <div class="overlay-temporada">
+                        <h3>Invierno</h3>
+                        <p>Plantas de interior resistentes</p>
+                    </div>
+                </a>
             </div>
-        </form>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TEST -->
+    <section class="seccion-personalizada">
+        <div class="contenedor">
+            <div class="barra-verde"></div>
+            <div class="contenido">
+                <h1>Test De Plantas</h1>
+                <p>Descubre tu planta ideal</p>
+                <button class="boton-test" onclick="window.location.href='test/test.html'">Realizar Test</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN RAMOS PRE-HECHOS -->
+    <!-- 
+  ========================================
+  SECCIÓN RAMOS PRE-HECHOS - INDEX.PHP
+  ========================================
+  Reemplaza la sección actual de ramos en index.php con esto
+  Mantiene la estructura de tarjetas temporada pero minimalista
+-->
+
+<!-- SECCIÓN RAMOS PRE-HECHOS -->
+<section class="seccion-ramos">
+  <div class="ramos-container">
+    <!-- Título de la sección -->
+    <h2 class="ramos-titulo">🌸 Ramos Pre-hechos</h2>
+    <p class="ramos-subtitulo">Descubre nuestras composiciones especiales de plantas para crear momentos especiales</p>
+    
+    <!-- Grid de 2 tarjetas SOLO -->
+    <div class="ramos-grid">
+      <!-- TARJETA 1: Regalos Perfectos -->
+      <a href="ramos.php?tipo=regalos" class="tarjeta-ramo">
+        <img src="img/plantas/Lirio de la Paz.jpg" alt="Regalos Perfectos" onerror="this.src='img/placeholder.jpg'">
+        <div class="overlay-ramo">
+          <h3>Regalos Perfectos</h3>
+          <p>Composiciones especiales para sorprender a tus seres queridos</p>
+          <span class="precio-ramo">Desde 45€</span>
+        </div>
+      </a>
+
+      <!-- TARJETA 2: Plantas Seleccionadas -->
+      <a href="ramos.php?tipo=seleccionadas" class="tarjeta-ramo">
+        <img src="img/plantas/Anturio Rojo.jpg" alt="Plantas Seleccionadas" onerror="this.src='img/placeholder.jpg'">
+        <div class="overlay-ramo">
+          <h3>Plantas Seleccionadas</h3>
+          <p>Las mejores variedades cuidadosamente seleccionadas</p>
+          <span class="precio-ramo">Desde 35€</span>
+        </div>
+      </a>
     </div>
+  </div>
 </section>
 
-<!-- ============================================================
-     5. NUEVA SECCIÓN: TARJETAS DE TEMPORADAS
-     ============================================================ -->
-<section class="seccion-temporadas">
-    <div class="container-temporadas">
-        <h2 class="titulo-temporadas">Buscar por Temporada</h2>
-        <div class="grid-temporadas">
-
-            <!-- Tarjeta PRIMAVERA -->
-            <a href="/catalogo.php?temporada=primavera" class="tarjeta-temporada">
-                <img src="/img/temporadas/primavera.png" alt="Primavera">
-                <div class="overlay-temporada">
-                    <h3>Primavera</h3>
-                    <p>Nuevos brotes y flores</p>
+    <!-- SECCIÓN EQUIPO -->
+    <section class="seccion-equipo">
+        <div class="equipo-container">
+            <h2 class="equipo-titulo">¡Conoce a nuestro equipo!</h2>
+            <p class="equipo-subtitulo">Somos una tienda de jardinería apasionada por las plantas y la vida vegetal. Nos encanta contribuir a nuestra comunidad y marcar la diferencia.</p>
+            
+            <div class="equipo-grid">
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Daniel Cebriano Buján" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
+                    <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir nuevas variedades.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
                 </div>
-            </a>
-
-            <!-- Tarjeta VERANO -->
-            <a href="/catalogo.php?temporada=verano" class="tarjeta-temporada">
-                <img src="/img/temporadas/verano.png" alt="Verano">
-                <div class="overlay-temporada">
-                    <h3>Verano</h3>
-                    <p>Plantas resistentes al calor</p>
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Pau Gazapo Solís" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
+                    <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
                 </div>
-            </a>
-
-            <!-- Tarjeta OTOÑO -->
-            <a href="/catalogo.php?temporada=otoño" class="tarjeta-temporada">
-                <img src="/img/temporadas/otono.png" alt="Otoño">
-                <div class="overlay-temporada">
-                    <h3>Otoño</h3>
-                    <p>Tonos cálidos y acogedores</p>
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Marcos Narváez Suárez" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
+                    <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
                 </div>
-            </a>
+            </div>
 
-            <!-- Tarjeta INVIERNO -->
-            <a href="/catalogo.php?temporada=invierno" class="tarjeta-temporada">
-                <img src="/img/temporadas/invierno.png" alt="Invierno">
-                <div class="overlay-temporada">
-                    <h3>Invierno</h3>
-                    <p>Plantas de interior resistentes</p>
-                </div>
-            </a>
-
+                <div class="equipo-contacto">
+                <a class="btn-contacto"
+                    href="mailto:contacto@jardindejazmines.com?subject=Consulta%20desde%20la%20web">Escríbenos</a>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- TU SECCIÓN PERSONALIZADA ACTUAL (mantén tu HTML) -->
-<section class="seccion-personalizada">
-    <div class="contenedor">
-        <div class="barra-verde"></div>
-        <div class="contenido">
-            <h1>DESCUBRE TU PLANTA IDEAL</h1>
-            <p>Realiza un test breve y descubre con qué planta compartes tu personalidad.</p>
-            <button class="boton-test">Realizar Test</button>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="seccion-equipo" id="conocenos">
-    <div class="equipo-container">
-        <h2 class="equipo-titulo">¡Conoce a nuestro equipo!</h2>
-        <p class="equipo-subtitulo">Somos una tienda de jardinería apasionada por las plantas y la vida vegetal. Nos encanta contribuir a nuestra comunidad y marcar la diferencia.</p>
+    <?php include 'includes/footer.php'; ?>
 
-        <div class="equipo-grid">
-            <article class="miembro">
-                <img src="/img/plantas/default.jpg" alt="Foto de Daniel Cebriano Buján" class="miembro-foto">
-                <!-- no se para que era la imagen de default, pero asi por lo emnos se ve algo -->
-                <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
-                <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir nuevas variedades.</p>
-                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Daniel">RRSS</a>
-            </article>
-
-            <article class="miembro">
-                <img src="/img/plantas/default.jpg" alt="Foto de Pau Gazapo Solís" class="miembro-foto">
-                <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
-                <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
-                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Pau">RRSS</a>
-            </article>
-
-            <article class="miembro">
-                <img src="/img/plantas/default.jpg" alt="Foto de Marcos Narváez Suárez" class="miembro-foto">
-                <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
-                <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
-                <a class="btn-rrss" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir redes sociales de Marcos">RRSS</a>
-            </article>
-        </div>
-
-        <div class="equipo-contacto">
-            <a class="btn-contacto" href="mailto:contacto@jardindejazmines.com?subject=Consulta%20desde%20la%20web">Escríbenos</a>
-        </div>
-    </div>
-</section>
-
-<?php
-try {
-    // ============================================================
-    // 6. INCLUIR FOOTER
-    // ============================================================
-    if (!file_exists('includes/footer.php')) {
-        throw new Exception("Footer no encontrado");
-    }
-
-    include 'includes/footer.php';
-} catch (Exception $e) {
-    // Si falla el footer, redirigir a HTML
-    if (!headers_sent()) {
-        header("Location: /index.html");
-        exit;
-    } else {
-        echo '<script>window.location.href="/index.html";</script>';
-        exit;
-    }
-}
-
-// Restaurar error handler original
-restore_error_handler();
-?>
+    
+</body>
+</html>

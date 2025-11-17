@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Plantas - Jardín de Jazmines</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+</html>
+<body>
+    <?php include 'includes/header.php'; ?>
+
+    <!-- SECCIÓN RAMOS PRE-HECHOS -->
+    <section class="seccion-ramos">
+        <div class="ramos-container">
+            <h2 class="ramos-titulo">🌸 Ramos Pre-hechos</h2>
+            <p class="ramos-subtitulo">Descubre nuestras composiciones especiales de plantas para crear momentos especiales</p>
+            
+            <div class="ramos-grid">
+                <a href="ramos.php?tipo=regalos" class="tarjeta-ramo">
+                    <img src="img/ramo-regalos.jpg" alt="Regalos Perfectos" onerror="this.src='img/plantas/default.jpg'">
+                    <div class="overlay-ramo">
+                        <h3>Regalos Perfectos</h3>
+                        <p>Composiciones especiales para sorprender a tus seres queridos</p>
+                        <span class="precio-ramo">Desde 45€</span>
+                    </div>
+                </a>
+                <a href="ramos.php?tipo=seleccionadas" class="tarjeta-ramo">
+                    <img src="img/ramo-seleccionadas.jpg" alt="Plantas Seleccionadas" onerror="this.src='img/plantas/default.jpg'">
+                    <div class="overlay-ramo">
+                        <h3>Plantas Seleccionadas</h3>
+                        <p>Las mejores variedades cuidadosamente seleccionadas</p>
+                        <span class="precio-ramo">Desde 35€</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EQUIPO -->
+    <section class="seccion-equipo">
+        <div class="equipo-container">
+            <h2 class="equipo-titulo">¡Conoce a nuestro equipo!</h2>
+            <p class="equipo-subtitulo">Somos una tienda de jardinería apasionada por las plantas y la vida vegetal. Nos encanta contribuir a nuestra comunidad y marcar la diferencia.</p>
+            
+            <div class="equipo-grid">
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Daniel Cebriano Buján" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Daniel Cebriano Buján</h3>
+                    <p class="miembro-descripcion">Hola! Soy Daniel y me apasionan los musgos. Únete a mí para descubrir nuevas variedades.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
+                </div>
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Pau Gazapo Solís" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Pau Gazapo Solís</h3>
+                    <p class="miembro-descripcion">Especialista en plantas de interior y diseño verde.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
+                </div>
+                <div class="miembro">
+                    <img src="img/plantas/default.jpg" alt="Marcos Narváez Suárez" class="miembro-foto" onerror="this.src='img/avatar-default.jpg'">
+                    <h3 class="miembro-nombre">Marcos Narváez Suárez</h3>
+                    <p class="miembro-descripcion">Amante de los cactus y variedades pinchudas.</p>
+                    <a href="#" class="btn-rrss">RRSS</a>
+                </div>
+            </div>
+
+                <div class="equipo-contacto">
+                <a class="btn-contacto"
+                    href="mailto:contacto@jardindejazmines.com?subject=Consulta%20desde%20la%20web">Escríbenos</a>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>

@@ -1,82 +1,69 @@
-<?php
-// Este archivo se incluye al final de todas las páginas
-?>
-</main> <!-- Cierra el main abierto en header.php -->
-
-<footer class="footer-container">
+<!-- FOOTER -->
+<!-- Enlace a la hoja de estilos del footer -->
+<link rel="stylesheet" href="css/footer.css">
+<footer>
+  <div class="footer-container">
+    <!-- COLUMNA IZQUIERDA -->
     <div class="footer-left">
-        <div class="logo-section">
-            <a href="/index.php" class="logo">
-                <img src="/img/logo.png" alt="Logo">
-            </a>
-        </div>
-
-        <div class="register-section">
-            <h2 class="register-title">¿Quieres registrarte?</h2>
-            <p class="register-description">
-                Recibe noticias, ofertas exclusivas y consejos de jardinería.
-            </p>
-            <button class="register-btn" id="registerBtn">Registrarme</button>
-        </div>
+      <div class="logo-section">
+        <a href="#" class="logo">
+          <div class="logo-icon">🌿</div>
+        </a>
+      </div>
+      
+      <div class="register-section">
+        <h3 class="register-title">Suscríbete</h3>
+        <p class="register-description">Recibe nuestras mejores ofertas y novedades.</p>
+        <button class="register-btn">Suscribirse</button>
+      </div>
     </div>
 
+    <!-- COLUMNA DERECHA -->
     <div class="footer-right">
-        <div class="search-section">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar..." class="search-input">
-                <button class="search-btn" id="searchBtn" title="Buscar" aria-label="Buscar">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+      <div class="search-section">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Buscar plantas...">
+          <button class="search-btn">🔍</button>
+        </div>
+      </div>
+
+      <div class="links-section">
+        <div class="links-column">
+          <h4 class="column-title">Compañía</h4>
+          <ul class="links-list">
+            <li><a href="#" class="footer-link">Sobre nosotros</a></li>
+            <li><a href="#" class="footer-link">Blog</a></li>
+            <li><a href="#" class="footer-link">Contacto</a></li>
+          </ul>
         </div>
 
-        <div class="links-section">
-            <div class="links-column">
-                <h3>Ayuda</h3>
-                <ul class="links-list">
-                    <li><a href="#" class="footer-link">FAQ</a></li>
-                    <li><a href="#" class="footer-link">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="links-column">
-                <h3>Sobre Nosotros</h3>
-                <ul class="links-list">
-                    <li><a href="#" class="footer-link">Quiénes somos</a></li>
-                    <li><a href="#" class="footer-link">Blog</a></li>
-                </ul>
-            </div>
-
-            <div class="links-column">
-                <h3>Legal</h3>
-                <ul class="links-list">
-                    <li><a href="/pages/aviso-legal.php" class="footer-link">Aviso Legal</a></li>
-                    <li><a href="/pages/politica-privacidad.php" class="footer-link">Política de Privacidad</a></li>
-                    <li><a href="/pages/politica-cookies.php" class="footer-link">Política de Cookies</a></li>
-                    <li><a href="/pages/condiciones-venta.php" class="footer-link">Condiciones de Venta</a></li>
-                    <li><a href="/pages/derecho-desistimiento.php" class="footer-link">Derecho de Desistimiento</a></li>
-                </ul>
-            </div>
+        <div class="links-column">
+          <h4 class="column-title">Legales</h4>
+          <ul class="links-list">
+            <li><a href="#" class="footer-link">Privacidad</a></li>
+            <li><a href="#" class="footer-link">Términos</a></li>
+            <li><a href="#" class="footer-link">Cookies</a></li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
+
+  <!-- PIE LEGAL -->
+  <div class="footer-legal">
+    <p>© 2025 Jardín de Jazmines. Todos los derechos reservados.</p>
+    <div class="legal-info">
+      <span>NIF/CIF: [Pendiente]</span>
+      <span>|</span>
+      <span>Registro Mercantil: [Pendiente]</span>
+      <span>|</span>
+      <span>Dirección: [Pendiente]</span>
+    </div>
+  </div>
+
+  <script src="js/footer.js"></script>
+
 </footer>
 
-<!-- Información legal del pie de página -->
-<div class="footer-legal">
-    <p>&copy; <?php echo date('Y'); ?> Jardín de Jazmines. Todos los derechos reservados.</p>
-    <p class="legal-info">
-        <span>NIF/CIF: [Pendiente]</span> |
-        <span>Registro Mercantil: [Pendiente]</span> |
-        <span>Dirección: [Pendiente]</span>
-    </p>
-</div>
 
-<!-- Scripts JavaScript -->
-<script src="/interfacesWeb1/js/header.js"></script>
-<script src="/interfacesWeb1/js/footer.js"></script>
 
-<!-- JS específico de cada página -->
-<?php if (isset($js_adicional)) echo $js_adicional; ?>
-</body>
-
-</html>

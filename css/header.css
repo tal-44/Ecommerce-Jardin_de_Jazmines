@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /*
+ * Estilos del encabezado (header) del sitio. Incluye la barra
+ * promocional animada, el contenedor sticky, el logotipo circular,
+ * la navegación principal y los iconos de carrito y usuario. La
+ * paleta de colores se declara mediante variables para facilitar
+ * su reutilización. También se definen animaciones de entrada y
+ * movimiento para mejorar la experiencia visual.
+ */
+/*
     css/header.css
     - Propósito: estilos del header (partial).
     - Dependencias: Google Fonts (Poppins). Mantener selectores usados por JS (.nav-button, .icon-button, .header-container).
@@ -8,14 +16,14 @@
 */
 
 :root {
-    /* revisar: estas variables también existen en footer.css; considerar unificar en un archivo global */
-    --verde: #4a7c59;
-    --verde-claro: #a4c3b2;
-    --gris: #6c757d;
-    --gris-claro: #e9ecef;
-    --blanco: #ffffff;
-    --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --transicion: all 0.3s ease;
+        /* revisar: estas variables también existen en footer.css; considerar unificar en un archivo global */
+        --verde: #4a7c59;
+        --verde-claro: #a4c3b2;
+        --gris: #6c757d;
+        --gris-claro: #e9ecef;
+        --blanco: #ffffff;
+        --sombra: 0 2px 4px rgba(0,0,0,0.1);
+        --transicion: all 0.3s ease;
 }
 
 /* Reset CSS básico (AGREGADO PARA SOLUCIONAR MÁRGENES) */
@@ -36,7 +44,6 @@ body {
         opacity: 0;
         transform: translateY(-30px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -48,7 +55,6 @@ body {
     0% {
         transform: translateX(100%);
     }
-
     100% {
         transform: translateX(-100%);
     }
@@ -204,8 +210,8 @@ body {
 
 .nav-button:focus,
 .icon-button:focus {
-    outline: 2px solid var(--verde);
-    outline-offset: 2px;
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
 }
 
 /* ========================================
@@ -268,59 +274,217 @@ body {
 }
 
 .header-container {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--blanco);
-    box-shadow: var(--sombra);
-    animation: aparecer 0.6s ease-out;
-    will-change: transform;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+  animation: aparecer 0.6s ease-out;
+  will-change: transform;
 }
 
 .promo-text {
-    will-change: transform;
+  will-change: transform;
 }
 
-.note-small {
-    font-size: 0.75rem;
-    margin-left: 6px;
-    color: var(--gris);
+/* ===== BOTÓN DYSLEXIA (Accesibilidad) ===== */
+
+.dyslexia-btn {
+    /* Botón especial para cambiar fuente */
+    background: var(--color-surface);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    width: 45px;
+    height: 45px;
+    border-radius: var(--radius-base);
+    
+    /* Typography */
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+    
+    /* Estados */
+    transition: all var(--duration-normal) var(--ease-standard);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ========================================
-   MODO DISLEXIA / LECTURA F�CIL
-   ======================================== */
-
-.icon-button.active {
-    background-color: var(--verde);
-    color: var(--blanco);
+.dyslexia-btn:hover {
+    background: var(--color-secondary);
+    transform: scale(1.05);
 }
 
-body.dyslexic-mode {
-    font-family: 'Lexend', Arial, sans-serif !important;
-    letter-spacing: 0.05em;
-    line-height: 1.7;
-    word-spacing: 0.16em;
+.dyslexia-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
 }
 
-body.dyslexic-mode * {
-    font-family: 'Lexend', Arial, sans-serif !important;
+.dyslexia-btn.active {
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+    border-color: var(--color-primary);
 }
 
-body.dyslexic-mode h1,
-body.dyslexic-mode h2,
-body.dyslexic-mode h3,
-body.dyslexic-mode h4 {
-    font-weight: 600;
-    line-height: 1.4;
-}
+/* ===== MODO DYSLEXIA (en todo el sitio) ===== */
 
-body.dyslexic-mode p,
-body.dyslexic-mode li {
-    font-weight: 400;
+body.dyslexia-mode {
+    /* Cambiar a fuente sans-serif sin serifa */
+    font-family: 'Arial', 'Verdana', 'Helvetica', var(--font-family-base) !important;
+    
+    /* Aumentar espaciado entre letras */
+    letter-spacing: 0.1em;
+    
+    /* Aumentar espaciado entre líneas */
     line-height: 1.8;
 }
 
-body.dyslexic-mode .nav-button {
-    font-weight: 500;
+body.dyslexia-mode * {
+    /* Aplicar a TODOS los elementos */
+    font-family: 'Arial', 'Verdana', 'Helvetica', var(--font-family-base) !important;
 }
+
+/* ===== MENÚ USUARIO (Dropdown) ===== */
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    /* Menú desplegable oculto por defecto */
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-md);
+    min-width: 200px;
+    z-index: 100;
+}
+
+.user-dropdown.show {
+    /* Mostrar cuando tiene clase "show" */
+    display: block;
+}
+
+.dropdown-item {
+    /* Cada link del dropdown */
+    display: block;
+    padding: var(--space-12) var(--space-16);
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: all var(--duration-fast) var(--ease-standard);
+    font-size: var(--font-size-base);
+}
+
+.dropdown-item:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding-left: var(--space-20);
+}
+
+.dropdown-item:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* ===== ICON BUTTONS (Carrito, Usuario) ===== */
+
+.icon-button {
+    /* Botones de icono genéricos */
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-standard);
+    padding: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+    color: var(--color-primary);
+}
+
+.icon-button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+/* ===== RESPONSIVE PARA DYSLEXIA ===== */
+
+/* Mobile portrait breakpoint */
+@media (max-width: 480px) {
+    .dyslexia-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .user-dropdown {
+        min-width: 180px;
+        top: 45px;
+    }
+    
+    .dropdown-item {
+        padding: var(--space-10) var(--space-12);
+        font-size: var(--font-size-sm);
+    }
+    
+    .dropdown-item:hover {
+        padding-left: var(--space-16);
+    }
+    
+    body.dyslexia-mode {
+        font-size: var(--font-size-lg); /* Aumentar un poco más en móvil */
+    }
+}
+
+/* Si el modo dyslexia está activo en móvil */
+@media (max-width: 768px) {
+    body.dyslexia-mode {
+        font-size: var(--font-size-lg); /* Aumentar un poco más en móvil */
+    }
+    
+    .user-dropdown {
+        min-width: 200px;
+        right: var(--space-16);
+    }
+}
+
+/* ===== NOTAS IMPORTANTES ===== */
+
+/*
+1. DÓNDE AGREGAR ESTO:
+   - Al FINAL de tu css/header.css existente
+   - No reemplazar el archivo completo, solo AGREGAR estos estilos
+
+2. CÓMO FUNCIONA DYSLEXIA:
+   - El botón "Aa" está en el header
+   - Al hacer click, se agrega clase "dyslexia-mode" al <body>
+   - El CSS automáticamente cambia toda la fuente
+   - La preferencia se guarda en localStorage
+   - Al volver a la web, mantiene la preferencia
+
+3. REQUISITOS EN HTML:
+   - En header.php debe haber:
+     <button id="dyslexiaBtn" class="icon-button dyslexia-btn" onclick="toggleDyslexiaFont()">Aa</button>
+   - En header.php debe haber JavaScript para toggleDyslexiaFont()
+
+4. DEBUGGING:
+   - F12 → Console
+   - Escribir: document.body.classList.toggle('dyslexia-mode')
+   - Verifica si la fuente cambia
+
+*/

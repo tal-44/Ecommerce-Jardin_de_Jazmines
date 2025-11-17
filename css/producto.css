@@ -4,6 +4,16 @@
    PRODUCTO.CSS - VERSIÓN FINAL LIMPIA
    ======================================== */
 
+/*
+ * Este archivo controla el diseño de la página de detalle de una
+ * planta. Se divide en dos columnas: una fija con la imagen en
+ * grande (incluyendo un badge de temporada) y otra con la
+ * información (nombre, nombre científico, precio, stock, descripción
+ * y cuidados). También define estilos para el selector de cantidad,
+ * el botón de agregar al carrito y un bloque de productos
+ * relacionados al final de la página.
+ */
+
 /* Variables de color */
 :root {
     --verde: #4a7c59;

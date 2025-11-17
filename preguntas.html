@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntas</title>
+  <!-- Cargamos los estilos del test desde la carpeta css/ -->
+  <link rel="stylesheet" href="../css/testPaginas.css">
+</head>
+<body class="preguntas-body">
+  <!-- Enlace para volver a la pantalla de inicio del test -->
+  <a class="back-button" href="test.html">← Volver</a>
+  <main class="container">
+    <img class="logo" src="../img/img_logo.png" alt="Logotipo" onerror="this.style.display='none'">
+    <h1>Tu planta ideal</h1>
+    <p class="lead">Responde y te recomendamos.</p>
+
+    <section class="stack" id="form">
+      <div class="card">
+        <h2>1. ¿Cuánto tiempo puedes dedicar al cuidado de tus plantas?</h2>
+        <div class="options">
+          <label><input type="radio" name="q1" value="cactus"><span>Muy poco</span></label>
+          <label><input type="radio" name="q1" value="suculenta"><span>Un rato cada semana</span></label>
+          <label><input type="radio" name="q1" value="monstera"><span>Me encanta cuidarlas</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2. ¿Dónde planeas colocar tu planta?</h2>
+        <div class="options">
+          <label><input type="radio" name="q2" value="interior"><span>Interior</span></label>
+          <label><input type="radio" name="q2" value="terraza"><span>Terraza soleada</span></label>
+          <label><input type="radio" name="q2" value="jardin"><span>Jardín amplio</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>3. ¿Qué te gustaría que transmitiera tu planta?</h2>
+        <div class="options">
+          <label><input type="radio" name="q3" value="resistente"><span>Resistencia</span></label>
+          <label><input type="radio" name="q3" value="alegria"><span>Alegría</span></label>
+          <label><input type="radio" name="q3" value="natural"><span>Naturaleza</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>4. ¿Tienes experiencia cuidando plantas?</h2>
+        <div class="options">
+          <label><input type="radio" name="q4" value="ninguna"><span>Ninguna</span></label>
+          <label><input type="radio" name="q4" value="algo"><span>Algo</span></label>
+          <label><input type="radio" name="q4" value="mucha"><span>Mucha</span></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>5. ¿Cómo es tu clima habitual?</h2>
+        <div class="options">
+          <label><input type="radio" name="q5" value="seco"><span>Seco o caluroso</span></label>
+          <label><input type="radio" name="q5" value="templado"><span>Templado</span></label>
+          <label><input type="radio" name="q5" value="humedo"><span>Húmedo</span></label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="button primary" id="ver">Ver resultado</button>
+        <a class="button secondary" href="test.html">Cancelar</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Lógica simple: prioriza q1 (tiempo disponible)
+    function recomendar(respuestas){
+      const r1 = respuestas.q1;
+      if(r1 === "cactus") return "cactus";
+      if(r1 === "suculenta") return "suculenta";
+      return "monstera";
+    }
+
+    document.getElementById("ver").addEventListener("click", () => {
+      // Comprobar que todas las preguntas están respondidas
+      const preguntas = ["q1","q2","q3","q4","q5"];
+      const respuestas = {};
+      for(const n of preguntas){
+        const checked = document.querySelector(`input[name="${n}"]:checked`);
+        if(!checked){
+          alert("Te falta la " + n.toUpperCase().replace('Q','pregunta '));
+          return;
+        }
+        respuestas[n] = checked.value;
+      }
+      // Calcula la recomendación en base a la respuesta de q1 (puedes ajustar la lógica si lo deseas)
+      const planta = recomendar(respuestas);
+      // Redirige al archivo PHP pasando la recomendación como parámetro `p`
+      location.href = `resultado.php?p=${encodeURIComponent(planta)}`;
+    });
+  </script>
+</body>
+</html>

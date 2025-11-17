@@ -1,0 +1,143 @@
+/*
+ * css/test.css
+ *
+ * Hoja de estilos para la página del test de plantas (test.php). Este
+ * diseño se inspira en la estética general del sitio y proporciona un
+ * formulario sencillo de tres preguntas para descubrir la planta ideal.
+ * Cuando el usuario envía el formulario se muestran dos tarjetas de
+ * productos recomendados en un grid responsivo. Las tarjetas reutilizan
+ * patrones de catalogo.php (imagen, nombre y precio) para mantener la
+ * coherencia visual. Ajusta los valores si deseas modificar colores o
+ * tamaños.
+ */
+
+/* Contenedor principal que centra el contenido y limita el ancho */
+.test-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Título del test */
+.test-container h1 {
+    font-size: 2rem;
+    color: #2f6b44;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para cada bloque de pregunta */
+.pregunta {
+    margin-bottom: 1.5rem;
+}
+
+.pregunta label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2f6b44;
+}
+
+.pregunta select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Botón del formulario */
+.btn-test {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #4a7c59;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-test:hover {
+    background: #3a5d47;
+}
+
+/* Grid de resultados (dos columnas en pantallas amplias) */
+.resultados-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjeta del resultado */
+.resultado-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultado-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.resultado-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.resultado-card:hover .resultado-imagen img {
+    transform: scale(1.05);
+}
+
+.resultado-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.resultado-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: #2f6b44;
+}
+
+.resultado-info p.nombre-cientifico {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.resultado-info p.precio {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2f6b44;
+    margin-bottom: 0.75rem;
+}
+
+.resultado-info .btn-detalle {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #a4c3b2;
+    color: #2f6b44;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.resultado-info .btn-detalle:hover {
+    background: #8eb5a3;
+}
